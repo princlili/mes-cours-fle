@@ -9,53 +9,84 @@
 	<link rel="stylesheet" href="dist/theme/white.css">
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	<style>
-		/* Styles de base */
+		/* Import Google Fonts */
+		@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+		
+		/* Variables CSS pour cohérence */
+		:root {
+			--color-primary: #1a73e8;
+			--color-text: #202124;
+			--color-text-light: #5f6368;
+			--color-background: #ffffff;
+			--color-surface: #f8f9fa;
+			--color-border: #dadce0;
+			--color-success: #34a853;
+			--color-warning: #fbbc04;
+			--border-radius: 8px;
+			--shadow-light: 0 1px 3px rgba(0,0,0,0.1);
+		}
+		
+		/* Styles de base améliorés */
 		.reveal .slides section {
 			text-align: left;
-			font-size: 0.8em;
-			padding: 30px;
+			font-size: 0.7em;
+			padding: 25px;
+			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 		}
 		
 		.reveal h1, .reveal h2, .reveal h3 {
 			text-align: center;
-			color: #1a73e8;
-			font-weight: 400;
-			margin-bottom: 25px;
+			color: var(--color-primary);
+			font-weight: 500;
+			margin-bottom: 20px;
+			font-family: 'Inter', sans-serif;
 		}
 		
 		.reveal h1 { 
-			font-size: 2em; 
-			color: #202124;
+			font-size: 1.8em; 
+			color: var(--color-text);
+			font-weight: 600;
 		}
 		
 		.reveal h2 { 
-			font-size: 1.6em; 
-			margin-bottom: 25px;
+			font-size: 1.4em; 
+			margin-bottom: 20px;
 		}
 		
 		.reveal h3 { 
-			font-size: 1.2em; 
-			color: #5f6368;
+			font-size: 1.1em; 
+			color: var(--color-text-light);
 			margin-bottom: 15px;
+		}
+		
+		.reveal h4 {
+			font-size: 1em;
+			color: var(--color-primary);
+			margin-bottom: 10px;
+			text-align: left;
+			font-weight: 500;
 		}
 		
 		.reveal p, .reveal li {
 			line-height: 1.5;
-			color: #3c4043;
+			color: var(--color-text);
+			font-weight: 400;
 		}
 		
-		/* Composants spécialisés */
+		/* Composants avec amélioration visuelle */
 		.objectifs {
-			background-color: #f8f9fa;
+			background: linear-gradient(135deg, var(--color-surface) 0%, #ffffff 100%);
 			padding: 20px;
-			border-radius: 8px;
+			border-radius: var(--border-radius);
 			margin: 15px 0;
+			border: 1px solid var(--color-border);
+			box-shadow: var(--shadow-light);
 		}
 		
 		.objectifs h3 {
-			color: #1a73e8;
+			color: var(--color-primary);
 			text-align: left;
-			margin-bottom: 10px;
+			margin-bottom: 12px;
 		}
 		
 		.vocabulaire {
@@ -65,69 +96,97 @@
 			margin: 20px 0;
 		}
 		
-		.vocabulaire h4 {
-			color: #1a73e8;
-			font-size: 1em;
-			margin-bottom: 10px;
-			text-align: left;
+		.vocabulaire-item {
+			background: white;
+			padding: 15px;
+			border-radius: var(--border-radius);
+			border-left: 4px solid var(--color-primary);
+			box-shadow: var(--shadow-light);
 		}
 		
 		.mot {
-			margin-bottom: 6px;
+			margin-bottom: 8px;
+			padding: 4px 0;
 		}
 		
 		.mot strong {
-			color: #202124;
+			color: var(--color-text);
+			font-weight: 500;
 		}
 		
 		.grammaire-box {
-			background-color: #f8f9fa;
+			background: linear-gradient(135deg, var(--color-surface) 0%, #ffffff 100%);
 			padding: 20px;
-			border-radius: 8px;
+			border-radius: var(--border-radius);
 			margin: 20px 0;
+			border: 1px solid var(--color-border);
+			box-shadow: var(--shadow-light);
 		}
 		
 		.formule {
-			background-color: #e8f0fe;
-			padding: 12px;
-			border-radius: 6px;
-			font-family: monospace;
-			font-size: 1em;
+			background: linear-gradient(135deg, #e8f0fe 0%, #f8fbff 100%);
+			padding: 15px;
+			border-radius: var(--border-radius);
+			font-family: 'Monaco', 'Consolas', monospace;
+			font-size: 1.1em;
 			text-align: center;
-			margin: 12px 0;
-			color: #1a73e8;
+			margin: 15px 0;
+			color: var(--color-primary);
+			border: 1px solid #cce7ff;
 		}
 		
 		.exemples {
-			background-color: #fff;
-			border-left: 4px solid #34a853;
+			background: white;
+			border-left: 4px solid var(--color-success);
 			padding: 15px;
 			margin: 15px 0;
+			border-radius: 0 var(--border-radius) var(--border-radius) 0;
+			box-shadow: var(--shadow-light);
 		}
 		
 		.activite {
-			background-color: #f8f9fa;
+			background: linear-gradient(135deg, var(--color-surface) 0%, #ffffff 100%);
 			padding: 20px;
-			border-radius: 8px;
+			border-radius: var(--border-radius);
 			margin: 20px 0;
+			border: 1px solid var(--color-border);
+			box-shadow: var(--shadow-light);
 		}
 		
 		.consigne {
-			background-color: #fff;
+			background: #fffbf0;
 			padding: 12px;
-			border-radius: 6px;
-			border-left: 3px solid #fbbc04;
+			border-radius: var(--border-radius);
+			border-left: 3px solid var(--color-warning);
 			margin: 12px 0;
 		}
 		
-		/* Classes utilitaires */
+		.important-box {
+			background: linear-gradient(135deg, #fef7e0 0%, #fffcf0 100%);
+			padding: 12px;
+			border-radius: var(--border-radius);
+			margin-top: 15px;
+			border: 1px solid #f4e4a6;
+		}
+		
+		/* Classes utilitaires améliorées */
 		.centré {
 			text-align: center;
 		}
 		
 		.petit {
-			font-size: 0.75em;
-			color: #5f6368;
+			font-size: 0.8em;
+			color: var(--color-text-light);
+		}
+		
+		.badge-niveau {
+			display: inline-block;
+			background: var(--color-primary);
+			color: white;
+			padding: 4px 12px;
+			border-radius: 20px;
+			font-size: 0.9em;
+			font-weight: 500;
 		}
 		
 		ul {
@@ -138,18 +197,23 @@
 			margin-bottom: 6px;
 		}
 		
-		/* Responsive Design */
+		hr {
+			margin: 25px 0;
+			border: none;
+			border-top: 2px solid var(--color-border);
+			border-radius: 1px;
+		}
 		
-		/* Mobiles (écrans < 768px) */
+		/* Responsive optimisé */
 		@media (max-width: 768px) {
 			.reveal .slides section {
 				font-size: 0.6em;
 				padding: 15px;
 			}
 			
-			.reveal h1 { font-size: 1.6em; }
-			.reveal h2 { font-size: 1.3em; }
-			.reveal h3 { font-size: 1.1em; }
+			.reveal h1 { font-size: 1.5em; }
+			.reveal h2 { font-size: 1.2em; }
+			.reveal h3 { font-size: 1em; }
 			
 			.vocabulaire {
 				grid-template-columns: 1fr;
@@ -162,28 +226,14 @@
 			}
 		}
 		
-		/* Écrans bas (hauteur < 700px) */
 		@media (max-height: 700px) {
 			.reveal .slides section {
-				font-size: 0.7em;
+				font-size: 0.65em;
 				padding: 20px;
 			}
 			
-			.reveal h1 { font-size: 1.8em; }
-			.reveal h2 { font-size: 1.4em; }
-			
-			.objectifs, .grammaire-box, .activite {
-				padding: 15px;
-				margin: 10px 0;
-			}
-		}
-		
-		/* Tablettes (769px - 1024px) */
-		@media (max-width: 1024px) and (min-width: 769px) {
-			.reveal .slides section {
-				font-size: 0.75em;
-				padding: 25px;
-			}
+			.reveal h1 { font-size: 1.6em; }
+			.reveal h2 { font-size: 1.3em; }
 		}
 	</style>
 </head>
@@ -196,7 +246,7 @@
 				<h1>Français Langue Étrangère</h1>
 				<h2>[Titre de la leçon]</h2>
 				<div class="centré" style="margin-top: 50px;">
-					<p style="font-size: 1.1em; color: #5f6368;">Niveau [A1/A2/B1/B2]</p>
+					<span class="badge-niveau">[A1/A2/B1/B2]</span>
 					<p class="petit" style="margin-top: 30px;">[Votre nom] • [Date]</p>
 				</div>
 			</section>
@@ -216,47 +266,54 @@
 				</div>
 
 				<div class="centré petit" style="margin-top: 30px;">
-					<p>Durée : [X] minutes</p>
+					<p>Durée estimée : [X] minutes</p>
 				</div>
 			</section>
 
-			<!-- Slide 3: Vocabulaire -->
+			<!-- Slide 3: Vocabulaire partie 1 -->
 			<section>
-				<h2>Vocabulaire</h2>
+				<h2>Vocabulaire nouveau</h2>
 				
 				<div class="vocabulaire">
-					<div>
+					<div class="vocabulaire-item">
 						<h4>[Catégorie 1]</h4>
 						<div class="mot"><strong>le/la [mot]</strong> : [définition]</div>
 						<div class="mot"><strong>le/la [mot]</strong> : [définition]</div>
 						<div class="mot"><strong>le/la [mot]</strong> : [définition]</div>
 						<div class="mot"><strong>le/la [mot]</strong> : [définition]</div>
-						<div class="mot"><strong>le/la [mot]</strong> : [définition]</div>
 					</div>
-					<div>
+					<div class="vocabulaire-item">
 						<h4>[Catégorie 2]</h4>
 						<div class="mot"><strong>[verbe]</strong> : [définition]</div>
 						<div class="mot"><strong>[adjectif]</strong> : [définition]</div>
 						<div class="mot"><strong>[expression]</strong> : [définition]</div>
 						<div class="mot"><strong>[mot]</strong> : [définition]</div>
-						<div class="mot"><strong>[mot]</strong> : [définition]</div>
 					</div>
-				</div>
-
-				<div class="exemples">
-					<h4>Exemples</h4>
-					<p>[Phrase d'exemple 1]</p>
-					<p>[Phrase d'exemple 2]</p>
-					<p>[Phrase d'exemple 3]</p>
 				</div>
 			</section>
 
-			<!-- Slide 4: Grammaire -->
+			<!-- Slide 4: Exemples vocabulaire -->
+			<section>
+				<h2>Utilisation en contexte</h2>
+				
+				<div class="exemples">
+					<h4>Phrases d'exemple</h4>
+					<p><strong>Exemple 1 :</strong> [Phrase d'exemple avec le vocabulaire]</p>
+					<p><strong>Exemple 2 :</strong> [Phrase d'exemple avec le vocabulaire]</p>
+					<p><strong>Exemple 3 :</strong> [Phrase d'exemple avec le vocabulaire]</p>
+				</div>
+
+				<div class="centré" style="margin-top: 30px;">
+					<p class="petit">Répétez ces phrases à voix haute</p>
+				</div>
+			</section>
+
+			<!-- Slide 5: Règle grammaticale -->
 			<section>
 				<h2>[Point grammatical]</h2>
 				
 				<div class="grammaire-box">
-					<h3>Règle</h3>
+					<h3>Règle à retenir</h3>
 					<p>[Explication claire et simple de la règle]</p>
 					
 					<div class="formule">
@@ -264,53 +321,53 @@
 					</div>
 				</div>
 
-				<div class="exemples">
-					<h4>Exemples</h4>
-					<ul>
-						<li>[Exemple 1]</li>
-						<li>[Exemple 2]</li>
-						<li>[Exemple 3]</li>
-					</ul>
-				</div>
-
-				<div style="background-color: #fef7e0; padding: 12px; border-radius: 6px; margin-top: 15px;">
-					<strong>Important :</strong> [Point à retenir]
+				<div class="important-box">
+					<strong>Point clé :</strong> [Élément important à retenir]
 				</div>
 			</section>
 
-			<!-- Slide 5: Activité -->
+			<!-- Slide 6: Exemples grammaticaux -->
 			<section>
-				<h2>Activité pratique</h2>
+				<h2>Application de la règle</h2>
+				
+				<div class="exemples">
+					<h4>Exemples pratiques</h4>
+					<ul>
+						<li><strong>Correct :</strong> [Exemple correct]</li>
+						<li><strong>Correct :</strong> [Exemple correct]</li>
+						<li><strong>Correct :</strong> [Exemple correct]</li>
+					</ul>
+				</div>
+
+				<div style="background: #ffebee; padding: 12px; border-radius: var(--border-radius); margin-top: 15px;">
+					<strong>Attention :</strong> [Erreur courante à éviter]
+				</div>
+			</section>
+
+			<!-- Slide 7: Activité et conclusion -->
+			<section>
+				<h2>À vous de jouer !</h2>
 				
 				<div class="activite">
 					<h3>[Titre de l'activité]</h3>
 					
 					<div class="consigne">
-						<strong>Consigne :</strong> [Instructions claires]
+						<strong>Consigne :</strong> [Instructions claires et concises]
 					</div>
 					
-					<ul>
-						<li><strong>Temps :</strong> [X] minutes</li>
-						<li><strong>Organisation :</strong> [individuel/binôme/groupe]</li>
-						<li><strong>Support :</strong> [matériel nécessaire]</li>
-					</ul>
-					
-					<div style="background-color: white; padding: 15px; border-radius: 6px; margin-top: 15px;">
-						[Contenu de l'exercice]
-					</div>
+					<p><strong>Temps :</strong> [X] minutes | <strong>Organisation :</strong> [individuel/binôme/groupe]</p>
 				</div>
 
-				<hr style="margin: 30px 0; border: none; border-top: 1px solid #dadce0;">
+				<hr>
 
-				<h3>Devoirs</h3>
+				<h3>Pour la prochaine fois</h3>
 				<ul>
-					<li>Réviser le vocabulaire</li>
-					<li>[Exercice spécifique]</li>
-					<li>[Ressource à consulter]</li>
+					<li>Réviser le vocabulaire de cette leçon</li>
+					<li>[Exercice ou devoir spécifique]</li>
 				</ul>
 
-				<div class="centré" style="margin-top: 30px; color: #5f6368;">
-					<p>Merci pour votre attention !</p>
+				<div class="centré" style="margin-top: 25px; color: var(--color-text-light);">
+					<p>Merci et à bientôt !</p>
 				</div>
 			</section>
 
