@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kursplan — Français B1 (3/3)</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --walnut:   #4A3424;
+    --ochre:    #B6841C;
+    --sage:     #5E6C4E;
+    --warm:     #F7F2E8;
+    --cream:    #FAF7F0;
+    --line:     #BEAA82;
+    --red:      #AC4426;
+    --text:     #2A1F14;
+    --muted:    #7A6A58;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @media print {
+    body { background: white; }
+    .no-print { display: none; }
+  }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 10.5pt;
+    line-height: 1.55;
+  }
+
+  .wrapper {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5cm 2.5cm 2cm;
+  }
+
+  .doc-header {
+    border-top: 3px solid var(--walnut);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0 10px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .doc-header-text { flex: 1; }
+
+  .doc-logo {
+    height: 38px;
+    width: auto;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .doc-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17pt;
+    color: var(--walnut);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .doc-meta {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 8.5pt;
+    color: var(--sage);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .doc-meta span { margin: 0 8px; color: var(--line); }
+
+  .mois {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ochre);
+    border-bottom: 1px solid var(--ochre);
+    padding-bottom: 3px;
+    margin: 22px 0 10px;
+  }
+
+  .seance {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 0 16px;
+    border-left: 3px solid var(--line);
+    margin-bottom: 8px;
+    padding: 7px 0 7px 12px;
+    background: var(--warm);
+  }
+
+  .seance:hover { border-left-color: var(--walnut); }
+  .seance.special { border-left-color: var(--red); background: #FDF5F2; }
+  .seance.delf    { border-left-color: var(--sage); background: #F3F5F0; }
+  .seance.fin     { border-left-color: var(--ochre); background: #FAF5E8; }
+
+  .seance-date {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: .06em;
+    color: var(--walnut);
+    text-transform: uppercase;
+    padding-top: 2px;
+  }
+
+  .seance-num {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 8.5pt;
+    color: var(--muted);
+    letter-spacing: .04em;
+  }
+
+  .seance-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--walnut);
+    letter-spacing: .02em;
+    margin-bottom: 3px;
+  }
+
+  .seance-items { list-style: none; padding: 0; }
+
+  .seance-items li {
+    font-size: 10pt;
+    color: var(--text);
+    padding: 1.5px 0 1.5px 14px;
+    position: relative;
+  }
+
+  .seance-items li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--line);
+    font-size: 9pt;
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 1px 7px;
+    border-radius: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+
+  .badge-u9  { background: #EDE8DC; color: var(--walnut); }
+  .badge-u10 { background: #E8EDDC; color: var(--sage); }
+  .badge-u11 { background: #EDECE0; color: #5A4A2A; }
+  .badge-u12 { background: #E0E8ED; color: #2A4A5A; }
+  .badge-delf  { background: var(--sage); color: white; }
+  .badge-libre { background: var(--red); color: white; }
+
+  .pause {
+    background: var(--warm);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--ochre);
+    text-align: center;
+    padding: 8px 16px;
+    margin: 14px 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ochre);
+  }
+
+  .frise { margin: 6px 0 2px; display: flex; flex-direction: column; gap: 2px; }
+  .frise-line { height: 1.5px; background: var(--ochre); }
+  .frise-line:nth-child(2) { width: 62%; opacity: .7; }
+  .frise-line:nth-child(3) { width: 30%; opacity: .45; }
+
+  .doc-footer {
+    margin-top: 28px;
+    border-top: 1px solid var(--line);
+    padding-top: 8px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 7.5pt;
+    letter-spacing: .06em;
+    color: var(--sage);
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header class="doc-header">
+    <div class="doc-header-text">
+      <div class="doc-title">Kursplan — Français B1 (3/3)</div>
+      <div class="doc-meta">
+        Klubschule Luzern
+        <span>|</span>
+        Mittwoch 18:10 – 20:00
+        <span>|</span>
+        22.04.2026 – 30.09.2026
+        <span>|</span>
+        Pierre Vaucher
+      </div>
+    </div>
+    <img class="doc-logo" src="logo.png" alt="Klubschule">
+  </header>
+
+  <!-- APRIL -->
+  <div class="mois">Avril 2026</div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 1</div>
+      <div class="seance-date">Mi 22.04.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u9">Unité 9</span>ARTS ET LETTRES : Einstieg</div>
+      <ul class="seance-items">
+        <li>Begrüssung und Kennenlernen der Gruppe</li>
+        <li>Überblick über das Modul B1 (3/3)</li>
+        <li>Einstieg und Entdeckung des Themas</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 2</div>
+      <div class="seance-date">Mi 29.04.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u9">U9</span>Artistes amateurs</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, Seite 110, Übungen 3–4</li>
+        <li><em>Rencontres B1</em>, S. 111, Üb. 5–6</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MAI -->
+  <div class="frise"><div class="frise-line"></div><div class="frise-line"></div><div class="frise-line"></div></div>
+  <div class="mois">Mai 2026</div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 3</div>
+      <div class="seance-date">Mi 06.05.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u9">U9</span>De la misère au Prix Nobel</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 112, Üb. 7–8</li>
+        <li><em>Rencontres B1</em>, S. 113, Üb. 9–11</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 4</div>
+      <div class="seance-date">Mi 13.05.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u9">U9</span>L'amour des lettres</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 114, Üb. 13–15</li>
+        <li><em>Rencontres B1</em>, S. 114, Projet</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 5</div>
+      <div class="seance-date">Mi 20.05.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u9">U9</span>Rendez-vous / <span class="badge badge-u10">Unité 10</span>Einstieg</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 115, Rendez-vous</li>
+        <li>Unité 10 „NATIONAL OU INTERNATIONAL ?" — Einstieg und Entdeckung</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 6</div>
+      <div class="seance-date">Mi 27.05.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u10">U10</span>Rêve et réalité</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 122, Üb. 3–5</li>
+        <li><em>Rencontres B1</em>, S. 123, Üb. 6–8</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- JUNI -->
+  <div class="frise"><div class="frise-line"></div><div class="frise-line"></div><div class="frise-line"></div></div>
+  <div class="mois">Juni 2026</div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 7</div>
+      <div class="seance-date">Mi 03.06.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u10">U10</span>Que faire ?</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 124, Üb. 9–10</li>
+        <li><em>Rencontres B1</em>, S. 125, Üb. 11–13</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 8</div>
+      <div class="seance-date">Mi 10.06.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u10">U10</span>Parlons du parlement !</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 126, Üb. 14–15</li>
+        <li><em>Rencontres B1</em>, S. 126, Projet</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 9</div>
+      <div class="seance-date">Mi 17.06.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u10">U10</span>Rendez-vous / <span class="badge badge-u11">Unité 11</span>Einstieg</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 127, Rendez-vous</li>
+        <li>Unité 11 „ÇA CHANGE LA VIE" — Einstieg und Entdeckung</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 10</div>
+      <div class="seance-date">Mi 24.06.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u11">U11</span>Pour le meilleur et pour le pire</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 134, Üb. 2</li>
+        <li><em>Rencontres B1</em>, S. 135, Üb. 3–4</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- JULI -->
+  <div class="frise"><div class="frise-line"></div><div class="frise-line"></div><div class="frise-line"></div></div>
+  <div class="mois">Juli 2026</div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 11</div>
+      <div class="seance-date">Mi 01.07.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u11">U11</span>Forcer le destin</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 136, Üb. 5</li>
+        <li><em>Rencontres B1</em>, S. 137, Üb. 6–7</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pause">☀ Sommerpause — 02.07. bis 18.08.2026 ☀</div>
+
+  <!-- AUGUST -->
+  <div class="frise"><div class="frise-line"></div><div class="frise-line"></div><div class="frise-line"></div></div>
+  <div class="mois">August 2026</div>
+
+  <div class="seance special">
+    <div>
+      <div class="seance-num">Séance 12</div>
+      <div class="seance-date">Mi 19.08.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-libre">Sans manuel</span>Retrouvailles und Reaktivierung</div>
+      <ul class="seance-items">
+        <li>Souhaits et intentions : „Qu'est-ce que vous aimeriez changer dans votre vie ?" Austausch in Tandems</li>
+        <li>Dialogproduktion „Ces phrases qui changent la vie"</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 13</div>
+      <div class="seance-date">Mi 26.08.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u12">Unité 12</span>Einstieg</div>
+      <ul class="seance-items">
+        <li>„UN VILLAGE PRESQUE VRAI" — Einstieg und Entdeckung des Themas</li>
+        <li><em>Rencontres B1</em>, S. 146, Üb. 2 : „Qui suis-je ?"</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SEPTEMBER -->
+  <div class="frise"><div class="frise-line"></div><div class="frise-line"></div><div class="frise-line"></div></div>
+  <div class="mois">September 2026</div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 14</div>
+      <div class="seance-date">Mi 02.09.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u12">U12</span>Nos règles de vie / La vie municipale</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 147, Üb. 3–4</li>
+        <li><em>Rencontres B1</em>, S. 148, Üb. 5–6</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 15</div>
+      <div class="seance-date">Mi 09.09.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u12">U12</span>Les évènements / Les médias du village</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 149, Üb. 7–8</li>
+        <li><em>Rencontres B1</em>, S. 147, Üb. 9–10</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 16</div>
+      <div class="seance-date">Mi 16.09.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-u12">U12</span>Fin Unité 12 / <span class="badge badge-delf">DELF</span>Séance 1</div>
+      <ul class="seance-items">
+        <li><em>Rencontres B1</em>, S. 147, Üb. 11</li>
+        <li>DELF B1 (Hachette) : Présentation und Compréhension de l'oral</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance delf">
+    <div>
+      <div class="seance-num">Séance 17</div>
+      <div class="seance-date">Mi 23.09.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-delf">DELF</span>Séances 2 und 3</div>
+      <ul class="seance-items">
+        <li>DELF B1 (Hachette) : Compréhension des écrits</li>
+        <li>DELF B1 (Hachette) : Production écrite</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seance fin">
+    <div>
+      <div class="seance-num">Séance 18</div>
+      <div class="seance-date">Mi 30.09.2026</div>
+    </div>
+    <div>
+      <div class="seance-title"><span class="badge badge-delf">DELF</span>Séance 4 + Kursabschluss</div>
+      <ul class="seance-items">
+        <li>DELF B1 (Hachette) : Production orale</li>
+        <li>Jeux und Kursabschluss B1 (3/3)</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="doc-footer">
+    Français B1 (3/3) — 18 Séances à 100 Min. — Klubschule Luzern — Pierre Vaucher
+  </footer>
+
+</div>
+</body>
+</html>
