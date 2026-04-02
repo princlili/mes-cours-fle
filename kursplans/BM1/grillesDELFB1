@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DELF B1 — Grilles d'évaluation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+  :root {
+    --noir: #111;
+    --gris-fonce: #333;
+    --gris-moyen: #777;
+    --gris-clair: #e8e8e8;
+    --gris-tres-clair: #f6f6f6;
+    --blanc: #fff;
+    --accent: #c0392b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300; font-size: 15px; line-height: 1.6;
+    color: var(--noir); background: var(--blanc); padding: 0;
+  }
+
+  .page-header {
+    background: var(--noir); color: var(--blanc);
+    padding: 32px 24px 24px; border-bottom: 4px solid var(--accent);
+  }
+  .page-header h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(18px, 4vw, 26px); font-weight: 600;
+    letter-spacing: -0.5px; margin-bottom: 6px;
+  }
+  .page-header p { font-size: 13px; color: #aaa; font-weight: 300; }
+
+  .nav-rapide {
+    background: var(--gris-tres-clair); border-bottom: 1px solid var(--gris-clair);
+    padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  }
+  .nav-rapide span {
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.5px; color: var(--gris-moyen); white-space: nowrap;
+  }
+  .nav-rapide a {
+    font-size: 12px; color: var(--gris-fonce); text-decoration: none;
+    padding: 4px 10px; border: 1px solid var(--gris-clair);
+    background: var(--blanc); white-space: nowrap;
+  }
+  .nav-rapide a:hover { background: var(--gris-clair); }
+
+  .main { padding: 0 16px 60px; max-width: 900px; margin: 0 auto; }
+
+  .epreuve { margin-top: 36px; }
+  .epreuve-titre {
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px; color: var(--blanc);
+    background: var(--accent); padding: 8px 14px;
+  }
+  .epreuve-sous-titre {
+    font-size: 12px; color: var(--gris-moyen); background: var(--gris-tres-clair);
+    border: 1px solid var(--gris-clair); border-top: none;
+    padding: 6px 14px; margin-bottom: 20px;
+  }
+  .total-label {
+    font-size: 11px; font-weight: 600; background: var(--noir);
+    color: var(--blanc); padding: 2px 7px; margin-left: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .categorie { margin-bottom: 28px; }
+  .categorie-titre {
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.8px; color: var(--gris-moyen);
+    border-bottom: 2px solid var(--noir); padding-bottom: 5px; margin-bottom: 0;
+  }
+
+  .critere { border-left: 3px solid var(--gris-clair); margin: 12px 0; padding-left: 14px; }
+  .critere-nom { font-size: 14px; font-weight: 600; color: var(--noir); margin-bottom: 4px; }
+  .critere-desc { font-size: 12.5px; color: var(--gris-moyen); font-style: italic; margin-bottom: 8px; }
+
+  .critere-meta {
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: 8px; margin-bottom: 10px;
+  }
+  .critere-max {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    background: var(--gris-tres-clair); border: 1px solid var(--gris-clair);
+    padding: 2px 6px; color: var(--gris-fonce); display: inline-block;
+  }
+
+  /* REPÈRE B1 */
+  .repere {
+    font-size: 11px; font-family: 'IBM Plex Mono', monospace;
+    background: #fff; border: 1px dashed #999;
+    padding: 2px 8px; color: var(--gris-fonce);
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .repere::before {
+    content: "B1 ✓";
+    font-weight: 600; color: #555; font-size: 10px;
+    margin-right: 4px;
+  }
+  .repere.attention { border-color: var(--accent); color: var(--accent); }
+  .repere.attention::before { content: "B1 ✓ ⚠"; color: var(--accent); }
+
+  .niveaux { display: grid; gap: 6px; }
+  .niveau {
+    display: grid; grid-template-columns: 52px 1fr;
+    gap: 10px; align-items: start; padding: 8px 10px;
+    background: var(--gris-tres-clair); border: 1px solid var(--gris-clair);
+  }
+  .niveau-score {
+    font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600;
+    color: var(--noir); text-align: center; padding-top: 1px;
+  }
+  .niveau-texte { font-size: 13px; line-height: 1.5; color: var(--gris-fonce); }
+  .niveau-texte strong { color: var(--noir); font-weight: 600; }
+
+  .niveau.n0 { border-left: 3px solid #ccc; }
+  .niveau.n1 { border-left: 3px solid #aaa; }
+  .niveau.n2 { border-left: 3px solid #777; }
+  .niveau.n3 { border-left: 3px solid #444; }
+  .niveau.n4 { border-left: 3px solid var(--noir); }
+
+  hr.section { border: none; border-top: 2px solid var(--gris-clair); margin: 40px 0; }
+
+  .nota {
+    background: #fff8f7; border-left: 4px solid var(--accent);
+    padding: 12px 16px; font-size: 13px; color: var(--gris-fonce); margin: 20px 0;
+  }
+  .nota strong { color: var(--accent); }
+
+  .legende {
+    display: flex; flex-wrap: wrap; gap: 14px; margin: 16px 0;
+    font-size: 12px; color: var(--gris-fonce); align-items: center;
+  }
+  .legende-item { display: flex; align-items: center; gap: 6px; }
+  .legende-box {
+    display: inline-block; border: 1px dashed #999;
+    padding: 1px 6px; font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px; font-weight: 600; color: #555;
+  }
+  .legende-box.att { border-color: var(--accent); color: var(--accent); }
+
+  @media (max-width: 480px) {
+    .niveau { grid-template-columns: 44px 1fr; gap: 8px; }
+    .niveau-score { font-size: 13px; }
+    .niveau-texte { font-size: 12px; }
+    .critere-nom { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>DELF B1 — Grilles d'évaluation</h1>
+  <p>Guide pratique de cotation · Production écrite &amp; Production orale · Ancres concrètes par niveau</p>
+</div>
+
+<div class="nav-rapide">
+  <span>Aller à :</span>
+  <a href="#pe">Production écrite</a>
+  <a href="#po-linguistique">PO — Linguistique</a>
+  <a href="#po-entretien">PO — Entretien dirigé</a>
+  <a href="#po-interaction">PO — Interaction</a>
+  <a href="#po-pointdevue">PO — Point de vue</a>
+</div>
+
+<div class="main">
+
+<div class="nota">
+  <strong>Comment utiliser ce guide :</strong> Pour chaque critère, repérez d'abord l'ancre la plus proche (0 / mi-chemin / maximum), puis demandez-vous si la production est "plutôt en-dessous" ou "plutôt au-dessus" pour décider des demi-points.
+</div>
+
+<div class="legende">
+  <strong style="font-size:11px; text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap;">Légende :</strong>
+  <div class="legende-item"><span class="legende-box">B1 ✓</span> score typique d'un candidat qui passe confortablement</div>
+  <div class="legende-item"><span class="legende-box att">B1 ✓ ⚠</span> critère structurellement difficile pour jeunes germanophones — anticiper</div>
+</div>
+
+<!-- ========================================================= PRODUCTION ÉCRITE -->
+<div class="epreuve" id="pe">
+  <div class="epreuve-titre">Production écrite <span class="total-label">/25</span></div>
+  <div class="epreuve-sous-titre">180 mots environ · 45 minutes · essai, courrier, article…</div>
+
+  <div class="categorie">
+    <div class="categorie-titre">Compétences pragmatiques et sociolinguistiques</div>
+
+    <div class="critere">
+      <div class="critere-nom">Respect de la consigne</div>
+      <div class="critere-desc">Adéquation avec la tâche demandée + respect de la longueur minimale.</div>
+      <div class="critere-meta">
+        <span class="critere-max">max. 2 pts</span>
+        <span class="repere">1,5 pt — consigne respectée, longueur correcte, type de texte globalement tenu</span>
+      </div>
+      <div class="niveaux">
+        <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Hors sujet ou quasi-vide.</strong> Ne répond pas à la consigne, ou trop court pour être évalué.</div></div>
+        <div class="niveau n1"><div class="niveau-score">0,5</div><div class="niveau-texte"><strong>Effleure le sujet.</strong> Thème reconnaissable mais longueur très insuffisante ou type de texte non respecté.</div></div>
+        <div class="niveau n2"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Répond globalement.</strong> Consigne comprise, type de texte à peu près respecté — longueur limite ou écarts ponctuels.</div></div>
+        <div class="niveau n3"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Répond bien.</strong> Consigne bien comprise, longueur correcte, type de texte respecté — petits manques de précision.</div></div>
+        <div class="niveau n4"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Répond pleinement.</strong> Consigne entièrement respectée, longueur adéquate, type de texte maîtrisé.</div></div>
+      </div>
+    </div>
+
+    <div class="critere">
+      <div class="critere-nom">Capacité à présenter des faits</div>
+      <div class="critere-desc">Aptitude à décrire des faits, des événements ou des expériences de manière compréhensible.</div>
+      <div class="critere-meta">
+        <span class="critere-max">max. 4 pts</span>
+        <span class="repere">2–2,5 pts — faits présents, globalement clairs, quelques imprécisions acceptables</span>
+      </div>
+      <div class="niveaux">
+        <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Aucun fait présenté.</strong> Contenu vide, incohérent ou sans rapport avec la tâche.</div></div>
+        <div class="niveau n1"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Faits épars.</strong> Quelques éléments isolés, difficiles à suivre — manque de contexte ou d'organisation.</div></div>
+        <div class="niveau n2"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Faits présents mais limités.</strong> L'essentiel est là, mais peu développé ou partiellement compréhensible.</div></div>
+        <div class="niveau n3"><div class="niveau-score">3</div><div class="niveau-texte"><strong>Faits bien présentés.</strong> Description claire et organisée — quelques imprécisions mineures.</div></div>
+        <div class="niveau n4"><div class="niveau-score">4</div><div class="niveau-texte"><strong>Faits présentés avec précision.</strong> Description fluide, détaillée, bien contextualisée — le lecteur suit sans effort.</div></div>
+      </div>
+    </div>
+
+    <div class="critere">
+      <div class="critere-nom">Capacité à exprimer sa pensée</div>
+      <div class="critere-desc">Aptitude à présenter ses idées, sentiments, réactions et à donner son opinion.</div>
+      <div class="critere-meta">
+        <span class="critere-max">max. 4 pts</span>
+        <span class="repere">1,5–2 pts — opinion présente et compréhensible, argumentation basique mais réelle</span>
+      </div>
+      <div class="niveaux">
+        <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Pas d'opinion.</strong> Paraphrase la consigne — aucun point de vue personnel.</div></div>
+        <div class="niveau n1"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Amorce d'opinion.</strong> Prise de position esquissée mais non développée — "j'aime", "c'est bien" sans justification.</div></div>
+        <div class="niveau n2"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Opinion présente.</strong> Point de vue clair mais peu étayé — un ou deux arguments simples, peu nuancés.</div></div>
+        <div class="niveau n3"><div class="niveau-score">3</div><div class="niveau-texte"><strong>Opinion développée.</strong> Arguments multiples, quelques exemples ou nuances — expression personnelle reconnaissable.</div></div>
+        <div class="niveau n4"><div class="niveau-score">4</div><div class="niveau-texte"><strong>Opinion développée et nuancée.</strong> Prise de position claire, bien argumentée, avec exemples.</div></div>
+      </div>
+    </div>
+
+    <div class="critere">
+      <div class="critere-nom">Cohérence et cohésion</div>
+      <div class="critere-desc">Aptitude à relier une série d'éléments distincts en un discours qui s'enchaîne.</div>
+      <div class="critere-meta">
+        <span class="critere-max">max. 3 pts</span>
+        <span class="repere attention">1,5 pt — connecteurs de base présents, fil globalement suivi malgré quelques ruptures</span>
+      </div>
+      <div class="niveaux">
+        <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Pas de cohérence.</strong> Phrases juxtaposées sans lien — impossible de suivre le fil.</div></div>
+        <div class="niveau n1"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Cohérence minimale.</strong> Connecteurs basiques uniquement ("et", "mais", "alors") — ruptures fréquentes.</div></div>
+        <div class="niveau n2"><div class="niveau-score">1,5–2</div><div class="niveau-texte"><strong>Cohérence partielle.</strong> L'ensemble se suit globalement — quelques ruptures ou répétitions subsistent.</div></div>
+        <div class="niveau n3"><div class="niveau-score">2,5–3</div><div class="niveau-texte"><strong>Bonne cohérence.</strong> Connecteurs variés et appropriés — le texte forme un tout lisible et bien structuré.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="categorie">
+    <div class="categorie-titre">Compétence lexicale / orthographe lexicale</div>
+
+    <div class="critere">
+      <div class="critere-nom">Étendue du vocabulaire</div>
+      <div class="critere-desc">Richesse et variété du vocabulaire pour s'exprimer sur le sujet — périphrases acceptées si nécessaire.</div>
+      <div class="critere-meta">
+        <span class="critere-max">max. 2 pts</span>
+        <span class="repere">1–1,5 pt — idées exprimées, quelques périphrases ponctuelles tolérées</span>
+      </div>
+      <div class="niveaux">
+        <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Vocabulaire insuffisant.</strong> Mots de base uniquement — impossible d'exprimer les idées voulues.</div></div>
+        <div class="niveau n1"><div class="niveau-score">0,5–1</div><div class="niveau-texte"><strong>Vocabulaire limité.</strong> Les idées passent avec beaucoup de périphrases et de répétitions.</div></div>
+        <div class="niveau n2"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Vocabulaire suffisant.</strong> Idées exprimées clairement — quelques périphrases ponctuelles non bloquantes.</div></div>
+        <div class="niveau n3"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Vocabulaire varié.</strong> Termes précis et adaptés au sujet, peu de répétitions.</div></div>
+      </div>
+    </div>
+
+    <div class="critere">
+      <div class="critere-nom">Maîtrise du vocabulaire</div>
+      <div class="critere-desc">Précision et justesse dans l'emploi des mots — bonne maîtrise de base, erreurs possibles sur le vocabulaire complexe.</div>
+      <div class="critere-meta">
+        <span class="critere-max">max. 2 pts</span>
+        <span class="repere">1–1,5 pt — mots courants bien utilisés, quelques erreurs sur termes moins fréquents</span>
+      </div>
+      <div class="niveaux">
+        <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Emplois systématiquement erronés.</strong> Les mots ne correspondent pas au sens voulu.</div></div>
+        <div class="niveau n1"><div class="niveau-score">0,5–1</div><div class="niveau-texte"><strong>Erreurs fréquentes.</strong> Des mots courants sont mal employés — le sens reste parfois compréhensible avec effort.</div></div>
+        <div class="niveau n2"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Maîtrise correcte.</strong> Vocabulaire courant bien utilisé — quelques erreurs sur des termes moins fréquents.</div></div>
+        <div class="niveau n3"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Bonne maîtrise.</strong> Les mots sont employés avec justesse, y compris dans des contextes légèrement complexes.</div></div>
+      </div>
+    </div>
+
+    <div class="critere">
+      <div class="critere-nom">Maîtrise de l'orthographe lexicale</div>
+      <div class="critere-desc">Orthographe des mots, ponctuation et mise en page — assez juste pour être compréhensible.</div>
+      <div class="critere-meta">
+        <span class="critere-max">max. 2 pts</span>
+        <span class="repere">1–1,5 pt — mots courants corrects, erreurs ponctuelles sur les moins fréquents</span>
+      </div>
+      <div class="niveaux">
+        <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Orthographe très défaillante.</strong> Les erreurs rendent la lecture difficile.</div></div>
+        <div class="niveau n1"><div class="niveau-score">0,5–1</div><div class="niveau-texte"><strong>Erreurs fréquentes.</strong> Mots courants souvent mal orthographiés — le sens reste globalement accessible.</div></div>
+        <div class="niveau n2"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Orthographe globalement correcte.</strong> Quelques erreurs sur des mots moins fréquents — ne gêne pas la lecture.</div></div>
+        <div class="niveau n3"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Orthographe soignée.</strong> Erreurs rares — mise en page et ponctuation maîtrisées.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="categorie">
+    <div class="categorie-titre">Compétence grammaticale / orthographe grammaticale</div>
+
+    <div class="critere">
+      <div class="critere-nom">Degré d'élaboration des phrases</div>
+      <div class="critere-desc">Maîtrise de la phrase simple et des phrases complexes les plus courantes.</div>
+      <div class="critere-meta">
+        <span class="critere-max">max. 2 pts</span>
+        <span class="repere">1–1,5 pt — phrase simple maîtrisée, quelques tentatives de subordination réussies</span>
+      </div>
+      <div class="niveaux">
+        <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Phrases non construites.</strong> Mots juxtaposés ou structures agrammaticales.</div></div>
+        <div class="niveau n1"><div class="niveau-score">0,5–1</div><div class="niveau-texte"><strong>Phrases simples uniquement.</strong> Structures courtes et basiques — peu de subordination, beaucoup de répétition.</div></div>
+        <div class="niveau n2"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Quelques phrases complexes.</strong> Tentatives de subordination — réussies dans l'ensemble, avec erreurs ponctuelles.</div></div>
+        <div class="niveau n3"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Phrases bien construites.</strong> Variété de structures, phrases complexes correctement formées.</div></div>
+      </div>
+    </div>
+
+    <div class="critere">
+      <div class="critere-nom">Choix des temps et des modes</div>
+      <div class="critere-desc">Emploi approprié des temps verbaux malgré des influences de la langue maternelle.</div>
+      <div class="critere-meta">
+        <span class="critere-max">max. 2 pts</span>
+        <span class="repere">1–1,5 pt — temps principaux corrects, erreurs tolérées sur subjonctif / conditionnel</span>
+      </div>
+      <div class="niveaux">
+        <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Temps non maîtrisés.</strong> Les temps sont confondus ou absents — repérage temporel impossible.</div></div>
+        <div class="niveau n1"><div class="niveau-score">0,5–1</div><div class="niveau-texte"><strong>Temps fréquemment erronés.</strong> Un ou deux temps pour tout — présent et infinitif en remplacement de tout le reste.</div></div>
+        <div class="niveau n2"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Temps globalement corrects.</strong> Temps principaux maîtrisés — quelques erreurs sur les modes.</div></div>
+        <div class="niveau n3"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Bonne maîtrise des temps.</strong> Alternances correctes — erreurs rares.</div></div>
+      </div>
+    </div>
+
+    <div class="critere">
+      <div class="critere-nom">Morphosyntaxe / orthographe grammaticale</div>
+      <div class="critere-desc">Accords en genre et en nombre, pronoms, marques verbales.</div>
+      <div class="critere-meta">
+        <span class="critere-max">max. 2 pts</span>
+        <span class="repere">1–1,5 pt — accords de base stables, erreurs résiduelles sur cas moins fréquents</span>
+      </div>
+      <div class="niveaux">
+        <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Accords systématiquement erronés.</strong> Aucune marque d'accord visible.</div></div>
+        <div class="niveau n1"><div class="niveau-score">0,5–1</div><div class="niveau-texte"><strong>Erreurs fréquentes.</strong> Les accords de base sont instables — genre, conjugaison souvent incorrects.</div></div>
+        <div class="niveau n2"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Accords généralement corrects.</strong> Erreurs résiduelles sur des cas moins fréquents.</div></div>
+        <div class="niveau n3"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Bonne maîtrise morphosyntaxique.</strong> Accords globalement fiables — erreurs ponctuelles et non systématiques.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section">
+
+<!-- ========================================================= PO LINGUISTIQUE -->
+<div class="epreuve" id="po-linguistique">
+  <div class="epreuve-titre">Production orale — Compétences linguistiques <span class="total-label">pour les 3 parties</span></div>
+  <div class="epreuve-sous-titre">Ces critères s'appliquent à l'ensemble de la prestation orale, toutes parties confondues.</div>
+
+  <div class="critere">
+    <div class="critere-nom">Lexique — étendue et maîtrise</div>
+    <div class="critere-desc">Richesse, variété et précision du vocabulaire à l'oral — périphrases acceptées si nécessaire.</div>
+    <div class="critere-meta">
+      <span class="critere-max">max. 4 pts</span>
+      <span class="repere">2–2,5 pts — idées exprimées clairement, périphrases ponctuelles acceptées</span>
+    </div>
+    <div class="niveaux">
+      <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Vocabulaire insuffisant.</strong> Blocages constants, recours systématique à la langue maternelle.</div></div>
+      <div class="niveau n1"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Vocabulaire très limité.</strong> Seuls les mots les plus basiques disponibles — aucune nuance possible.</div></div>
+      <div class="niveau n2"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Vocabulaire suffisant.</strong> Les idées passent, parfois avec des périphrases — le thème est abordé sans précision fine.</div></div>
+      <div class="niveau n3"><div class="niveau-score">3</div><div class="niveau-texte"><strong>Vocabulaire varié.</strong> Termes assez précis, peu de blocages — périphrases ponctuelles non gênantes.</div></div>
+      <div class="niveau n4"><div class="niveau-score">4</div><div class="niveau-texte"><strong>Vocabulaire riche et précis.</strong> Expression aisée sur des sujets courants et complexes.</div></div>
+    </div>
+  </div>
+
+  <div class="critere">
+    <div class="critere-nom">Morphosyntaxe</div>
+    <div class="critere-desc">Maîtrise des structures grammaticales à l'oral — bon contrôle général malgré les influences de la langue maternelle.</div>
+    <div class="critere-meta">
+      <span class="critere-max">max. 5 pts</span>
+      <span class="repere">2,5–3 pts — structures simples maîtrisées, erreurs sur constructions complexes tolérées</span>
+    </div>
+    <div class="niveaux">
+      <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Aucune structure maîtrisée.</strong> Juxtaposition de mots isolés.</div></div>
+      <div class="niveau n1"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Structures très basiques uniquement.</strong> Phrase sujet-verbe-objet souvent erronée — tout le reste est approximatif.</div></div>
+      <div class="niveau n2"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Structures simples globalement correctes.</strong> La phrase de base passe — subordination et temps complexes défaillants.</div></div>
+      <div class="niveau n3"><div class="niveau-score">3</div><div class="niveau-texte"><strong>Bon contrôle des structures courantes.</strong> Erreurs sur constructions moins fréquentes — sans bloquer la communication.</div></div>
+      <div class="niveau n4"><div class="niveau-score">4</div><div class="niveau-texte"><strong>Bonne maîtrise générale.</strong> Erreurs ponctuelles — structures complexes souvent réussies.</div></div>
+      <div class="niveau n4"><div class="niveau-score">5</div><div class="niveau-texte"><strong>Maîtrise solide.</strong> Structures variées et correctes — erreurs très rares.</div></div>
+    </div>
+  </div>
+
+  <div class="critere">
+    <div class="critere-nom">Maîtrise du système phonologique</div>
+    <div class="critere-desc">Clarté et intelligibilité de la prononciation — quelques problèmes de formulation et pauses acceptables.</div>
+    <div class="critere-meta">
+      <span class="critere-max">max. 3 pts</span>
+      <span class="repere">1,5–2 pts — accent présent mais intelligible sans effort particulier de l'interlocuteur</span>
+    </div>
+    <div class="niveaux">
+      <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Incompréhensible.</strong> La prononciation est si éloignée du français qu'on ne reconnaît pas les mots.</div></div>
+      <div class="niveau n1"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Intelligible avec effort.</strong> Accent très marqué, erreurs phonémiques fréquentes — l'interlocuteur doit se concentrer.</div></div>
+      <div class="niveau n2"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Globalement intelligible.</strong> Accent présent — le message passe sans effort particulier.</div></div>
+      <div class="niveau n3"><div class="niveau-score">3</div><div class="niveau-texte"><strong>Prononciation claire.</strong> Accent discret — erreurs ponctuelles qui n'affectent pas la compréhension.</div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="section">
+
+<!-- ========================================================= PO ENTRETIEN DIRIGÉ -->
+<div class="epreuve" id="po-entretien">
+  <div class="epreuve-titre">Production orale — Entretien dirigé <span class="total-label">2–3 min</span></div>
+  <div class="epreuve-sous-titre">Parler de soi, de sa famille, de ses activités, de son passé, de ses projets — sans préparation.</div>
+
+  <div class="critere">
+    <div class="critere-nom">Parler de soi avec assurance</div>
+    <div class="critere-desc">Donner des informations et des explications sur ses centres d'intérêt, projets et actions personnelles.</div>
+    <div class="critere-meta">
+      <span class="critere-max">max. 2 pts</span>
+      <span class="repere">1–1,5 pt — répond aux questions, quelques développements spontanés</span>
+    </div>
+    <div class="niveaux">
+      <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Impossible de parler de soi.</strong> Blocages complets ou réponses monosyllabiques.</div></div>
+      <div class="niveau n1"><div class="niveau-score">0,5</div><div class="niveau-texte"><strong>Informations très limitées.</strong> Quelques faits basiques sans développement ni aisance.</div></div>
+      <div class="niveau n2"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Parle de soi de manière basique.</strong> Répond aux questions directes — peu d'initiative, peu d'exemples développés.</div></div>
+      <div class="niveau n3"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Parle de soi avec une certaine aisance.</strong> Développe ses réponses, donne des exemples — quelques hésitations non bloquantes.</div></div>
+      <div class="niveau n4"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Parle de soi avec assurance.</strong> Discours fluide et bien développé — initiative prise dans l'échange.</div></div>
+    </div>
+  </div>
+
+  <div class="critere">
+    <div class="critere-nom">Aborder un échange sur sujet familier</div>
+    <div class="critere-desc">Interagir sans préparation sur un sujet du quotidien avec une certaine assurance.</div>
+    <div class="critere-meta">
+      <span class="critere-max">max. 1 pt</span>
+      <span class="repere">0,5–1 pt — réagit aux questions, quelques rebonds spontanés</span>
+    </div>
+    <div class="niveaux">
+      <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Aucune interaction possible.</strong> Ne réagit pas aux relances — échange à sens unique.</div></div>
+      <div class="niveau n1"><div class="niveau-score">0,5</div><div class="niveau-texte"><strong>Interaction minimale.</strong> Répond aux questions directes — sans spontanéité ni rebond.</div></div>
+      <div class="niveau n2"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Interaction réelle.</strong> Réagit aux questions, relance l'échange — l'entretien ressemble à une conversation.</div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="section">
+
+<!-- ========================================================= PO INTERACTION -->
+<div class="epreuve" id="po-interaction">
+  <div class="epreuve-titre">Production orale — Exercice en interaction <span class="total-label">3–4 min</span></div>
+  <div class="epreuve-sous-titre">Situation de la vie courante légèrement inhabituelle — sans préparation.</div>
+
+  <div class="critere">
+    <div class="critere-nom">Faire face à une situation inhabituelle</div>
+    <div class="critere-desc">Gérer une situation un peu surprenante en respectant les codes sociaux appropriés.</div>
+    <div class="critere-meta">
+      <span class="critere-max">max. 1 pt</span>
+      <span class="repere">0,5–1 pt — situation comprise, réponse globalement adaptée</span>
+    </div>
+    <div class="niveaux">
+      <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Ne gère pas la situation.</strong> Bloqué ou réponse totalement inadaptée au contexte.</div></div>
+      <div class="niveau n1"><div class="niveau-score">0,5</div><div class="niveau-texte"><strong>Gère partiellement.</strong> Comprend la situation mais réponse maladroite ou socialement inappropriée.</div></div>
+      <div class="niveau n2"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Gère la situation.</strong> Réagit de manière appropriée, adapte son registre — situation traitée naturellement.</div></div>
+    </div>
+  </div>
+
+  <div class="critere">
+    <div class="critere-nom">Adapter les actes de parole à la situation</div>
+    <div class="critere-desc">Utiliser les formules et registres adaptés au contexte (demande, refus, excuse, proposition…).</div>
+    <div class="critere-meta">
+      <span class="critere-max">max. 2 pts</span>
+      <span class="repere">1–1,5 pt — fonctions communicatives essentielles réalisées, registre globalement adapté</span>
+    </div>
+    <div class="niveaux">
+      <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Actes de parole absents ou inadaptés.</strong> Aucune formule appropriée.</div></div>
+      <div class="niveau n1"><div class="niveau-score">0,5</div><div class="niveau-texte"><strong>Actes très basiques.</strong> Quelques formules simples sans variété ni nuance.</div></div>
+      <div class="niveau n2"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Actes de parole présents.</strong> Fonctions communicatives essentielles réalisées — parfois de manière directe ou maladroite.</div></div>
+      <div class="niveau n3"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Actes de parole variés.</strong> Demandes, suggestions, refus, explications — registre globalement adapté.</div></div>
+      <div class="niveau n4"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Actes de parole fluides et appropriés.</strong> Répertoire varié, registre bien calibré — échange proche d'une situation authentique.</div></div>
+    </div>
+  </div>
+
+  <div class="critere">
+    <div class="critere-nom">Répondre aux sollicitations de l'interlocuteur</div>
+    <div class="critere-desc">Réagir aux propos de l'examinateur — vérifier, confirmer, commenter le point de vue de l'autre.</div>
+    <div class="critere-meta">
+      <span class="critere-max">max. 2 pts</span>
+      <span class="repere">1–1,5 pt — prend en compte les propos de l'examinateur, réponses appropriées</span>
+    </div>
+    <div class="niveaux">
+      <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Pas de réaction.</strong> Ignore les interventions de l'examinateur ou ne les comprend pas.</div></div>
+      <div class="niveau n1"><div class="niveau-score">0,5</div><div class="niveau-texte"><strong>Réactions minimales.</strong> Répond aux questions directes uniquement — sans rebond ni initiative.</div></div>
+      <div class="niveau n2"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Réagit globalement.</strong> Prend en compte les propos de l'examinateur — réponses appropriées mais courtes.</div></div>
+      <div class="niveau n3"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Interaction réelle.</strong> Rebondit sur les propos, vérifie, confirme — échange dynamique la plupart du temps.</div></div>
+      <div class="niveau n4"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Interaction naturelle.</strong> Co-construit l'échange avec aisance — reprend, argumente, nuance.</div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="section">
+
+<!-- ========================================================= PO POINT DE VUE -->
+<div class="epreuve" id="po-pointdevue">
+  <div class="epreuve-titre">Production orale — Expression d'un point de vue <span class="total-label">3–4 min</span></div>
+  <div class="epreuve-sous-titre">À partir d'un document déclencheur · 10 min de préparation · exposé + échange.</div>
+
+  <div class="critere">
+    <div class="critere-nom">Présenter le sujet</div>
+    <div class="critere-desc">Introduire le document de manière simple et directe — donner le thème général.</div>
+    <div class="critere-meta">
+      <span class="critere-max">max. 1 pt</span>
+      <span class="repere">0,5–1 pt — thème mentionné, introduction minimale acceptable</span>
+    </div>
+    <div class="niveaux">
+      <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Pas d'introduction.</strong> Entre directement dans le détail sans présenter le sujet.</div></div>
+      <div class="niveau n1"><div class="niveau-score">0,5</div><div class="niveau-texte"><strong>Introduction partielle.</strong> Thème mentionné mais de manière vague ou incomplète.</div></div>
+      <div class="niveau n2"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Sujet présenté clairement.</strong> Thème du document annoncé de manière simple et directe.</div></div>
+    </div>
+  </div>
+
+  <div class="critere">
+    <div class="critere-nom">Présenter et expliquer les points principaux</div>
+    <div class="critere-desc">Développer une réflexion personnelle avec suffisamment de précision — arguments, exemples, nuances.</div>
+    <div class="critere-meta">
+      <span class="critere-max">max. 2,5 pts</span>
+      <span class="repere attention">1–1,5 pt — point de vue identifiable, quelques arguments, manque de structure toléré</span>
+    </div>
+    <div class="niveaux">
+      <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Aucun développement.</strong> Résume ou lit le document sans réflexion personnelle.</div></div>
+      <div class="niveau n1"><div class="niveau-score">0,5</div><div class="niveau-texte"><strong>Développement très limité.</strong> Une ou deux idées sans explication — réflexion personnelle quasi-absente.</div></div>
+      <div class="niveau n2"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Développement partiel.</strong> Quelques idées exprimées — peu de précision, position personnelle floue.</div></div>
+      <div class="niveau n3"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Développement correct.</strong> Point de vue identifiable, quelques arguments — manque de profondeur ou de structure.</div></div>
+      <div class="niveau n4"><div class="niveau-score">2</div><div class="niveau-texte"><strong>Bon développement.</strong> Arguments clairs et illustrés — réflexion personnelle visible.</div></div>
+      <div class="niveau n4"><div class="niveau-score">2,5</div><div class="niveau-texte"><strong>Développement complet et précis.</strong> Argumentation structurée, exemples pertinents, nuances.</div></div>
+    </div>
+  </div>
+
+  <div class="critere">
+    <div class="critere-nom">Relier les éléments en discours suivi</div>
+    <div class="critere-desc">Enchaîner les idées pour former un exposé cohérent, compréhensible sans effort.</div>
+    <div class="critere-meta">
+      <span class="critere-max">max. 1,5 pt</span>
+      <span class="repere attention">0,5–1 pt — fil globalement suivi, connecteurs de base présents, ruptures tolérées</span>
+    </div>
+    <div class="niveaux">
+      <div class="niveau n0"><div class="niveau-score">0</div><div class="niveau-texte"><strong>Pas de cohérence.</strong> Idées juxtaposées sans liens — impossible de suivre le fil.</div></div>
+      <div class="niveau n1"><div class="niveau-score">0,5</div><div class="niveau-texte"><strong>Cohérence minimale.</strong> Connecteurs basiques uniquement — ruptures fréquentes.</div></div>
+      <div class="niveau n2"><div class="niveau-score">1</div><div class="niveau-texte"><strong>Discours globalement suivi.</strong> Enchaînement perceptible — quelques ruptures ou répétitions de connecteurs.</div></div>
+      <div class="niveau n3"><div class="niveau-score">1,5</div><div class="niveau-texte"><strong>Discours bien enchaîné.</strong> Connecteurs variés et bien utilisés — l'exposé se suit facilement.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="nota" style="margin-top:40px;">
+  <strong>Rappel :</strong> Seuil de réussite global : 50/100 — note minimale par épreuve : 5/25. Un 0 à une seule épreuve est éliminatoire, même avec un bon total global.
+</div>
+
+</div>
+</body>
+</html>
