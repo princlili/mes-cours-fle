@@ -29,6 +29,7 @@ HTML course schedules generated from Org-mode.
 
 - [Français B1 (3/3) — Kursplan 2026](https://princlili.github.io/mes-cours-fle/kursplans/B1-3/kursplan_B1-3.html)
 - [Français A2 (2/3) — Kursplan 2026](https://princlili.github.io/mes-cours-fle/kursplans/A2-2/kursplan_A2-2.html)
+- [Français H2 — Kursplan 2026](https://princlili.github.io/mes-cours-fle/kursplans/H2/Kursplan_FrancaisH2.html)
 
 **Course index**
 - [All courses](https://princlili.github.io/mes-cours-fle/cours.html)
