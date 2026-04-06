@@ -10,12 +10,13 @@
     --walnut:   #4A3424;
     --ochre:    #B6841C;
     --sage:     #5E6C4E;
-    --warm:     #F7F2E8;
-    --cream:    #FAF7F0;
+    --warm:     #E8E2D4;
+    --cream:    #EDE8DC;
     --line:     #BEAA82;
     --red:      #AC4426;
     --text:     #2A1F14;
     --muted:    #7A6A58;
+    --mer-border: #9AA88E;
   }
 
 
@@ -30,6 +31,7 @@
     --red:      #D4705A;
     --text:     #E8DDD0;
     --muted:    #8A7A6A;
+    --mer-border: #4A5C42;
   }
 
   body.dark { background: var(--cream); color: var(--text); }
@@ -59,6 +61,8 @@
   .theme-toggle:hover { color: var(--walnut); border-color: var(--walnut); }
 
   @media print { .theme-toggle { display: none; } }
+  @media print { .window-deco { display: none; } }
+
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -114,6 +118,9 @@
     width: auto;
     flex-shrink: 0;
     margin-top: 2px;
+    border: 1px solid var(--line);
+    padding: 4px;
+    border-radius: 2px;
   }
 
   .doc-title {
@@ -165,9 +172,9 @@
   .seance:hover { border-left-color: var(--walnut); }
 
   .seance-mer {
-    border-left-color: #8A9E7A;
+    border-left-color: var(--mer-border);
   }
-  .seance-mer:hover { border-left-color: var(--sage); }
+  .seance-mer:hover { border-left-color: var(--walnut); }
 
   .seance-date {
     font-family: 'Josefin Sans', sans-serif;
@@ -313,10 +320,10 @@
   .badge-mer     { background: #E8EDE4; color: var(--sage); }
   .badge-pruefung{ background: #EDD8D0; color: var(--red); }
 
-  .frise { margin: 20px 0 2px; display: flex; flex-direction: column; gap: 2px; }
-  .frise-line { height: 1.5px; background: var(--ochre); }
-  .frise-line:nth-child(2) { width: 62%; opacity: .7; }
-  .frise-line:nth-child(3) { width: 30%; opacity: .45; }
+  .frise { margin: 24px 0 4px; display: flex; flex-direction: column; gap: 3px; }
+  .frise-line { height: 1.5px; background: var(--ochre); width: 100%; opacity: 1; }
+  .frise-line:nth-child(2) { width: 62%; opacity: .65; }
+  .frise-line:nth-child(3) { width: 30%; opacity: .38; }
 
   .doc-footer {
     margin-top: 28px;
@@ -328,6 +335,23 @@
     color: var(--sage);
     text-transform: uppercase;
   }
+
+  /* ── Fenster Lloyd ────────────────────────────────── */
+  .fenster-deco {
+    margin-top: 32px;
+    text-align: right;
+    padding-right: 4px;
+  }
+  .fenster-deco img {
+    height: 90px;
+    width: auto;
+    opacity: 0.55;
+    border-radius: 2px;
+    transition: opacity .3s;
+  }
+  .fenster-deco img:hover { opacity: 0.85; }
+  body.dark .fenster-deco img { opacity: 0.35; }
+  @media print { .fenster-deco { display: none; } }
 </style>
 </head>
 <body>
@@ -603,8 +627,13 @@
     </div>
   </div>
 
+
+  <div class="fenster-deco">
+    <img src="fensterLloyd.jpg" alt="Fenster — Frank Lloyd Wright">
+  </div>
+
   <footer class="doc-footer">
-    Français H2 — 16 Séances (10 Lun × 3×45' + 6 Mer × 2×45' + Lernatelier) — Minerva Schulen Luzern — Pierre Vaucher
+    Français H2 — 16 Séances (10 Lun × 3×45' + 6 Mer × 2×45' + Lernatelier) — Minerva Schulen — Pierre V.
   </footer>
 
 </div>
