@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kursplan — Français H2 · Minerva Luzern</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --walnut:   #4A3424;
+    --ochre:    #B6841C;
+    --sage:     #5E6C4E;
+    --warm:     #F7F2E8;
+    --cream:    #FAF7F0;
+    --line:     #BEAA82;
+    --red:      #AC4426;
+    --text:     #2A1F14;
+    --muted:    #7A6A58;
+  }
+
+
+  /* ── Dark mode ─────────────────────────────────────── */
+  body.dark {
+    --walnut:   #D4B896;
+    --ochre:    #D4A84B;
+    --sage:     #8FAF7A;
+    --warm:     #1C1710;
+    --cream:    #14110D;
+    --line:     #4A3E2C;
+    --red:      #D4705A;
+    --text:     #E8DDD0;
+    --muted:    #8A7A6A;
+  }
+
+  body.dark { background: var(--cream); color: var(--text); }
+  body.dark .pruefung-block { background: #2A1A14; }
+  body.dark .lernatelier-line { background: #1A2214; }
+  body.dark .doc-logo { filter: brightness(.85) sepia(.2); }
+
+  /* Toggle button */
+  .theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
+    background: var(--warm);
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background .2s, color .2s;
+  }
+  .theme-toggle:hover { color: var(--walnut); border-color: var(--walnut); }
+
+  @media print { .theme-toggle { display: none; } }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @media print {
+    body { background: white; }
+    .no-print { display: none; }
+  }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 10.5pt;
+    line-height: 1.55;
+  }
+
+  .wrapper {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5cm 2.5cm 2cm;
+  }
+
+  @media (max-width: 600px) {
+    .wrapper { padding: 1.2rem 1rem 1.5rem; }
+    .doc-title { font-size: 13pt; }
+    .doc-meta { font-size: 7.5pt; letter-spacing: .04em; }
+    .doc-logo { height: 28px; }
+    .seance { grid-template-columns: 1fr; gap: 4px 0; }
+    .seance-date { font-size: 8pt; }
+    .seance-num { font-size: 7.5pt; }
+    .seance-title { font-size: 10pt; }
+    .seance-items li { font-size: 9pt; }
+    .badge { font-size: 7.5pt; padding: 1px 5px; }
+    .mois { font-size: 7.5pt; }
+    .doc-meta span { margin: 0 4px; }
+  }
+
+  .doc-header {
+    border-top: 3px solid var(--walnut);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0 10px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .doc-header-text { flex: 1; }
+
+  .doc-logo {
+    height: 38px;
+    width: auto;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .doc-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17pt;
+    color: var(--walnut);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .doc-meta {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 8.5pt;
+    color: var(--sage);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .doc-meta span { margin: 0 8px; color: var(--line); }
+
+  .doc-meta-line2 {
+    margin-top: 2px;
+  }
+
+  .mois {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ochre);
+    border-bottom: 1px solid var(--ochre);
+    padding-bottom: 3px;
+    margin: 22px 0 10px;
+  }
+
+  .seance {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 0 16px;
+    border-left: 3px solid var(--line);
+    margin-bottom: 8px;
+    padding: 7px 0 7px 12px;
+    background: var(--warm);
+  }
+
+  .seance:hover { border-left-color: var(--walnut); }
+
+  .seance-mer {
+    border-left-color: #8A9E7A;
+  }
+  .seance-mer:hover { border-left-color: var(--sage); }
+
+  .seance-date {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: .06em;
+    color: var(--walnut);
+    text-transform: uppercase;
+    padding-top: 2px;
+  }
+
+  .seance-num {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 8.5pt;
+    color: var(--muted);
+    letter-spacing: .04em;
+  }
+
+  .seance-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--walnut);
+    letter-spacing: .02em;
+    margin-bottom: 3px;
+  }
+
+  .seance-items { list-style: none; padding: 0; }
+
+  .seance-items li {
+    font-size: 10pt;
+    color: var(--text);
+    padding: 1.5px 0 1.5px 14px;
+    position: relative;
+  }
+
+  .seance-items li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--line);
+    font-size: 9pt;
+  }
+
+  .seance-items li.placeholder {
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* Propriétés PROPERTIES */
+  .props {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 1px 10px;
+    margin-bottom: 4px;
+  }
+
+  .prop-key {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 2px;
+  }
+
+  .prop-val {
+    font-size: 9.5pt;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* Prüfungsblock innerhalb einer Séance */
+  .pruefung-block {
+    margin-top: 7px;
+    border-left: 3px solid var(--red);
+    padding: 5px 0 5px 10px;
+    background: #F5EBE7;
+  }
+
+  .pruefung-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 3px;
+  }
+
+  .pruefung-block ul { list-style: none; padding: 0; }
+
+  .pruefung-block ul li {
+    font-size: 9.5pt;
+    color: var(--text);
+    padding: 1px 0 1px 14px;
+    position: relative;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .pruefung-block ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #C86046;
+    font-size: 9pt;
+  }
+
+  /* Lernatelier-Zeile */
+  .lernatelier-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px;
+    padding: 4px 8px;
+    background: #E8EDE4;
+    border-left: 2px solid var(--sage);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 8.5pt;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 600;
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 1px 7px;
+    border-radius: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+
+  .badge-lun     { background: #EDE8DC; color: var(--walnut); }
+  .badge-mer     { background: #E8EDE4; color: var(--sage); }
+  .badge-pruefung{ background: #EDD8D0; color: var(--red); }
+
+  .frise { margin: 20px 0 2px; display: flex; flex-direction: column; gap: 2px; }
+  .frise-line { height: 1.5px; background: var(--ochre); }
+  .frise-line:nth-child(2) { width: 62%; opacity: .7; }
+  .frise-line:nth-child(3) { width: 30%; opacity: .45; }
+
+  .doc-footer {
+    margin-top: 28px;
+    border-top: 1px solid var(--line);
+    padding-top: 8px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 7.5pt;
+    letter-spacing: .06em;
+    color: var(--sage);
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header class="doc-header">
+    <div class="doc-header-text">
+      <div class="doc-title">Kursplan — Français H2 · Minerva Luzern</div>
+      <div class="doc-meta">
+        KV Grundbildung + BM1
+        <span>|</span>
+        20.04.2026 – 01.07.2026
+      </div>
+      <div class="doc-meta doc-meta-line2">
+        Montag 13:25–16:00 (3×45')
+        <span>|</span>
+        Mittwoch 08:15–10:50 (2×45' + Lernatelier)
+      </div>
+    </div>
+    <img class="doc-logo" src="minerva-logo.png" alt="Minerva Schulen">
+  </header>
+
+  <!-- APRIL -->
+  <div class="mois">Avril 2026</div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 1</div>
+      <div class="seance-date">LUNDI · 20.04.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">Première séance — Rituale + Diagnose</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+      <div class="pruefung-block">
+        <div class="pruefung-label">Prüfung — 15:15 bis 16:00</div>
+        <ul>
+          <li>Thema : à définir</li>
+          <li>Dauer : 45 min</li>
+          <li>Hilfsmittel : keine</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="seance seance-mer">
+    <div>
+      <div class="seance-num">Séance 2</div>
+      <div class="seance-date">MERCREDI · 22.04.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+      <div class="lernatelier-line">Lernatelier — CAD + gezieltes Coaching</div>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 3</div>
+      <div class="seance-date">LUNDI · 27.04.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAI -->
+  <div class="frise"><div class="frise-line"></div><div class="frise-line"></div><div class="frise-line"></div></div>
+  <div class="mois">Mai 2026</div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 4</div>
+      <div class="seance-date">LUNDI · 04.05.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="seance seance-mer">
+    <div>
+      <div class="seance-num">Séance 5</div>
+      <div class="seance-date">MERCREDI · 06.05.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+      <div class="lernatelier-line">Lernatelier — CAD + gezieltes Coaching</div>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 6</div>
+      <div class="seance-date">LUNDI · 11.05.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 7</div>
+      <div class="seance-date">LUNDI · 18.05.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="seance seance-mer">
+    <div>
+      <div class="seance-num">Séance 8</div>
+      <div class="seance-date">MERCREDI · 20.05.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+      <div class="lernatelier-line">Lernatelier — CAD + gezieltes Coaching</div>
+    </div>
+  </div>
+
+  <!-- JUNI -->
+  <div class="frise"><div class="frise-line"></div><div class="frise-line"></div><div class="frise-line"></div></div>
+  <div class="mois">Juni 2026</div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 9</div>
+      <div class="seance-date">LUNDI · 01.06.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="seance seance-mer">
+    <div>
+      <div class="seance-num">Séance 10</div>
+      <div class="seance-date">MERCREDI · 03.06.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+      <div class="lernatelier-line">Lernatelier — CAD + gezieltes Coaching</div>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 11</div>
+      <div class="seance-date">LUNDI · 08.06.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 12</div>
+      <div class="seance-date">LUNDI · 15.06.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="seance seance-mer">
+    <div>
+      <div class="seance-num">Séance 13</div>
+      <div class="seance-date">MERCREDI · 17.06.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+      <div class="lernatelier-line">Lernatelier — CAD + gezieltes Coaching</div>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 14</div>
+      <div class="seance-date">LUNDI · 22.06.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="seance">
+    <div>
+      <div class="seance-num">Séance 15</div>
+      <div class="seance-date">LUNDI · 29.06.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">À définir</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- JULI -->
+  <div class="frise"><div class="frise-line"></div><div class="frise-line"></div><div class="frise-line"></div></div>
+  <div class="mois">Juli 2026</div>
+
+  <div class="seance seance-mer">
+    <div>
+      <div class="seance-num">Séance 16</div>
+      <div class="seance-date">MERCREDI · 01.07.2026</div>
+    </div>
+    <div>
+            <div class="seance-title">Semesterbilanz</div>
+      <div class="props">
+        <span class="prop-key">Einheit</span><span class="prop-val">à définir</span>
+        <span class="prop-key">Lektionen</span><span class="prop-val">à définir</span>
+      </div>
+      <div class="lernatelier-line">Lernatelier — Semesterbilanz · freie Produktion</div>
+    </div>
+  </div>
+
+  <footer class="doc-footer">
+    Français H2 — 16 Séances (10 Lun × 3×45' + 6 Mer × 2×45' + Lernatelier) — Minerva Schulen Luzern — Pierre Vaucher
+  </footer>
+
+</div>
+
+<button class="theme-toggle no-print" onclick="document.body.classList.toggle('dark');localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light')" id="themeBtn">☾ Nuit</button>
+<script>
+  (function(){
+    var t = localStorage.getItem('theme');
+    if(t === 'dark') document.body.classList.add('dark');
+    var btn = document.getElementById('themeBtn');
+    function updateLabel(){
+      btn.textContent = document.body.classList.contains('dark') ? '☀ Jour' : '☾ Nuit';
+    }
+    updateLabel();
+    btn.addEventListener('click', updateLabel);
+  })();
+</script>
+</body>
+</html>
