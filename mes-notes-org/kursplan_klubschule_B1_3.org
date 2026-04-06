@@ -1,0 +1,160 @@
+#+TITLE: Kursplan — Français B1 (3/3) Hybrid
+#+AUTHOR: Pierre Vaucher
+#+OPTIONS: toc:nil num:nil
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper, 11pt]
+#+LATEX_HEADER: \usepackage[ngerman]{babel}
+#+LATEX_HEADER: \usepackage[margin=2.5cm]{geometry}
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \usepackage{charter}
+#+LATEX_HEADER: \definecolor{prairieWalnut}{RGB}{74,52,36}
+#+LATEX_HEADER: \definecolor{prairieOchre}{RGB}{182,132,28}
+#+LATEX_HEADER: \definecolor{prairieSage}{RGB}{94,108,78}
+#+LATEX_HEADER: \definecolor{prairieWarm}{RGB}{247,242,232}
+
+#+BEGIN_EXPORT latex
+\begin{center}
+{\color{prairieWalnut}\rule{\linewidth}{2pt}}\\[4pt]
+{\large\textbf{Kursplan — Français B1 (3/3) Hybrid}}\\[2pt]
+{\color{prairieSage}Klubschule Migros Luzern\quad|\quad Mittwoch 18:10--20:00\quad|\quad 22.04.2026 -- 30.09.2026}\\[4pt]
+{\color{prairieWalnut}\rule{\linewidth}{0.6pt}}
+\end{center}
+#+END_EXPORT
+
+* APRIL 2026
+
+** TODO Séance 1 — Mittwoch 22.04.2026
+   SCHEDULED: <2026-04-22 Wed 18:10>
+   - Begrüssung & Kennenlernen der Gruppe
+   - Überblick über das Modul B1 (3/3)
+   - TODO Unité 9 „Arts et lettres" — Einstieg & Entdeckung des Themas
+   - Selbststudium: [...]
+
+** TODO Séance 2 — Mittwoch 29.04.2026
+   SCHEDULED: <2026-04-29 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 9, S. 110, Üb. 3–4 : „Artistes amateurs"
+   - TODO Abschnitt 2 — Rencontres B1, Unité 9, S. 111, Üb. 5–6 : „Artistes amateurs"
+   - Selbststudium: [...]
+
+* MAI 2026
+
+** TODO Séance 3 — Mittwoch 06.05.2026
+   SCHEDULED: <2026-05-06 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 9, S. 112, Üb. 7–8 : „De la misère au Prix Nobel"
+   - TODO Abschnitt 2 — Rencontres B1, Unité 9, S. 113, Üb. 9–11 : „De la misère au Prix Nobel"
+   - Selbststudium: [...]
+
+** TODO Séance 4 — Mittwoch 13.05.2026
+   SCHEDULED: <2026-05-13 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 9, S. 114, Üb. 13–15 : „L'amour des lettres"
+   - TODO Abschnitt 2 — Rencontres B1, Unité 9, S. 114, projet
+   - Selbststudium: [...]
+
+** TODO Séance 5 — Mittwoch 20.05.2026
+   SCHEDULED: <2026-05-20 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 9, S. 115, Rendez-vous : „Dans le Val de Loire"
+   - TODO Abschnitt 2 — Unité 10 „National ou international" — Einstieg & Entdeckung des Themas
+   - Selbststudium: [...]
+
+** TODO Séance 6 — Mittwoch 27.05.2026
+   SCHEDULED: <2026-05-27 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 10, S. 122, Üb. 3–5 : „Rêve et réalité"
+   - TODO Abschnitt 2 — Rencontres B1, Unité 10, S. 123, Üb. 6–8 : „Rêve et réalité"
+   - Selbststudium: [...]
+
+* JUNI 2026
+
+** TODO Séance 7 — Mittwoch 03.06.2026
+   SCHEDULED: <2026-06-03 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 10, S. 124, Üb. 9–10 : „Que faire ?"
+   - TODO Abschnitt 2 — Rencontres B1, Unité 10, S. 125, Üb. 11–13 : „Que faire ?"
+   - Selbststudium: [...]
+
+** TODO Séance 8 — Mittwoch 10.06.2026
+   SCHEDULED: <2026-06-10 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 10, S. 126, Üb. 14–15 : „Parlons du parlement !"
+   - TODO Abschnitt 2 — Rencontres B1, Unité 10, S. 126, projet
+   - Selbststudium: [...]
+
+** TODO Séance 9 — Mittwoch 17.06.2026
+   SCHEDULED: <2026-06-17 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 10, S. 127, Rendez-vous : „À Paris"
+   - TODO Abschnitt 2 — Unité 11 „Ça change la vie" — Einstieg & Entdeckung des Themas
+   - Selbststudium: [...]
+
+** TODO Séance 10 — Mittwoch 24.06.2026
+   SCHEDULED: <2026-06-24 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 11, S. 134, Üb. 2 : „Pour le meilleur et pour le pire"
+   - TODO Abschnitt 2 — Rencontres B1, Unité 11, S. 135, Üb. 3–4 : „Pour le meilleur et pour le pire"
+   - Selbststudium: [...]
+
+* JULI 2026
+
+** TODO Séance 11 — Mittwoch 01.07.2026
+   SCHEDULED: <2026-07-01 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 11, S. 136, Üb. 5 : „Forcer le destin"
+   - TODO Abschnitt 2 — Rencontres B1, Unité 11, S. 137, Üb. 6–7 : „Forcer le destin"
+   - Selbststudium: [...]
+
+#+BEGIN_EXPORT latex
+\medskip
+\colorbox{prairieWarm}{\begin{minipage}{\linewidth}
+\vspace{4pt}
+\centering{\color{prairieOchre}\textbf{Sommerpause — 02.07. bis 18.08.2026}}
+\vspace{4pt}
+\end{minipage}}
+\medskip
+#+END_EXPORT
+
+* AUGUST 2026
+
+** TODO Séance 12 — Mittwoch 19.08.2026
+   SCHEDULED: <2026-08-19 Wed 18:10>
+   - Wiederaufnahme nach der Sommerpause — Reaktivierung
+   - TODO Abschnitt 1 — Retrouvailles & Reaktivierung (ohne Manuel). Thema: Souhaits et intentions — „Qu'est-ce que vous aimeriez changer dans votre vie ?" Aktivität: Austausch in Tandems / Gruppe auf Basis eigener Sätze aus dem Sommer
+   - TODO Abschnitt 2 — Unité 11 abschliessen (Konversion, ohne Manuel) Aktivität: Dialogproduktion „Ces phrases qui changent la vie" — frei, auf Basis der erarbeiteten Kompetenz
+   - Selbststudium: [...]
+
+** TODO Séance 13 — Mittwoch 26.08.2026
+   SCHEDULED: <2026-08-26 Wed 18:10>
+   - TODO Abschnitt 1 — Unité 12 „Un village presque vrai" — Einstieg & Entdeckung des Themas
+   - TODO Abschnitt 2 — Rencontres B1, Unité 12, S. 146, Üb. 2 : „Qui suis-je ?"
+   - Selbststudium: [...]
+
+* SEPTEMBER 2026
+
+** TODO Séance 14 — Mittwoch 02.09.2026
+   SCHEDULED: <2026-09-02 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 12, S. 147, Üb. 3–4 : „Nos règles de vie"
+   - TODO Abschnitt 2 — Rencontres B1, Unité 12, S. 148, Üb. 5–6 : „La vie municipale"
+   - Selbststudium: [...]
+
+** TODO Séance 15 — Mittwoch 09.09.2026
+   SCHEDULED: <2026-09-09 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 12, S. 149, Üb. 7–8 : „Les évènements"
+   - TODO Abschnitt 2 — Rencontres B1, Unité 12, S. 147, Üb. 9–10 : „Les médias du village"
+   - Selbststudium: [...]
+
+** TODO Séance 16 — Mittwoch 16.09.2026
+   SCHEDULED: <2026-09-16 Wed 18:10>
+   - TODO Abschnitt 1 — Rencontres B1, Unité 12, S. 147, Üb. 11 : „Les médias du village
+   - TODO Abschnitt 2 — DELF B1 Vorbereitung (Hachette), Séance 1 : Présentation & Compréhension de l'oral
+   - Selbststudium: [...]
+
+** TODO Séance 17 — Mittwoch 23.09.2026
+   SCHEDULED: <2026-09-23 Wed 18:10>
+   - TODO Bilan & Prüfungsvorbereitung
+   - TODO Abschnitt 1 — DELF B1 Vorbereitung (Hachette), Séance 2 : Compréhension des écrits
+   - TODO Abschnitt 2 — DELF B1 Vorbereitung (Hachette), Séance 3 : Production écrite
+   - Selbststudium: [...]
+
+** TODO Séance 18 — Mittwoch 30.09.2026
+   SCHEDULED: <2026-09-30 Wed 18:10>
+   - TODO Abschnitt 1 — DELF B1 Vorbereitung (Hachette), Séance 4 : Production orale
+   -Jeux &  Kursabschluss B1 (3/3)
+
+#+BEGIN_EXPORT latex
+\vspace{1cm}
+{\color{prairieWalnut}\rule{\linewidth}{0.6pt}}\\[3pt]
+\small{\color{prairieSage}Français B1 (3/3) — 18 Séances à 100 Min. — Klubschule Migros Luzern — Pierre Vaucher}
+#+END_EXPORT
