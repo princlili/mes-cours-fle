@@ -76,18 +76,18 @@
   }
 
   .wrapper {
-    max-width: 780px;
+    max-width: 860px;
     margin: 0 auto;
     padding: 2.5cm 2.5cm 2cm;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     .wrapper { padding: 1.2rem 1rem 1.5rem; }
     .doc-title { font-size: 13pt; }
     .doc-meta { font-size: 7.5pt; letter-spacing: .04em; }
-    .doc-logo { height: 28px; }
+    .doc-logo { height: 52px; }
     .seance { grid-template-columns: 1fr; gap: 4px 0; }
-    .seance-date { font-size: 8pt; }
+    .seance-date { font-size: 8pt; white-space: normal; }
     .seance-num { font-size: 7.5pt; }
     .seance-title { font-size: 10pt; }
     .seance-items li { font-size: 9pt; }
@@ -110,7 +110,7 @@
   .doc-header-text { flex: 1; }
 
   .doc-logo {
-    height: 38px;
+    height: 76px;
     width: auto;
     flex-shrink: 0;
     margin-top: 2px;
@@ -154,7 +154,7 @@
 
   .seance {
     display: grid;
-    grid-template-columns: 130px 1fr;
+    grid-template-columns: 200px 1fr;
     gap: 0 16px;
     border-left: 3px solid var(--line);
     margin-bottom: 8px;
@@ -177,6 +177,7 @@
     color: var(--walnut);
     text-transform: uppercase;
     padding-top: 2px;
+    white-space: nowrap;
   }
 
   .seance-num {
@@ -334,7 +335,7 @@
 
   <header class="doc-header">
     <div class="doc-header-text">
-      <div class="doc-title">Kursplan — Français H2 · Minerva Luzern</div>
+      <div class="doc-title">Kursplan — Français H2</div>
       <div class="doc-meta">
         KV Grundbildung + BM1
         <span>|</span>
