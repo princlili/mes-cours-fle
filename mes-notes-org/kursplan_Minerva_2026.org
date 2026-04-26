@@ -18,17 +18,17 @@
 #   (setq org-export-select-tags '("Lernende"))
 #
 # Tag-Konventionen:
-#   :Lernende:  → sichtbar im HTML-Export für Lernende (Séance-Titel, Schwerpunkt, Prüfung)
-#   :Pruefung:  → Prüfung angekündigt — manuell setzen wenn geplant
+#   :Lernende:    → sichtbar im HTML-Export für Lernende
+#   :Pruefung:    → Prüfung angekündigt — manuell setzen wenn geplant
 #   :Lernatelier: → Lernatelier-Block (Mittwoch)
-#   Abschnitt-Einträge tragen keinen Tag → unsichtbar im Export (kein :Lernende: = nicht exportiert)
+#   :ZurichWoche: → kein Unterricht, Klasse in Zürich
 #
 # Prüfungsvorlage zum Kopieren:
 # *** Prüfung :Pruefung:Lernende:
 #     SCHEDULED: <YYYY-MM-DD Day HH:MM-HH:MM>
 #     - Thema: [Einheit / Lektionen]
-#     - Dauer: [45 min]
-#     - Hilfsmittel: [keine / Wörterbuch / etc.]
+#     - Dauer: [30 / 45 min]
+#     - Hilfsmittel: [keine]
 
 #+BEGIN_EXPORT latex
 \begin{center}
@@ -45,180 +45,198 @@
 ** TODO Séance 1 (Lun) — Montag 20.04.2026 :Lernende:
    SCHEDULED: <2026-04-20 Mon 13:25-16:00>
    :PROPERTIES:
-   :Einheit:     [zu bestätigen — Gespräch Direktor 07.04]
-   :Lektionen:   [?]
-   :Schwerpunkt: [erste Stunde — Rituale + Diagnose]
+   :Einheit:     Unité 6 — Problèmes
+   :Lektionen:   pp. 88–89 (L1A)
+   :Schwerpunkt: Négations particulières (ne…rien, ne…personne) · questions (qu'est-ce que… / qui est-ce qui…)
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
-
-*** Prüfung :Pruefung:Lernende:
-    SCHEDULED: <2026-04-20 Mon 15:15-16:00>
-    - Thema: [Beispiel — Unité X, Lektionen Y–Z]
-    - Dauer: [45 min]
-    - Hilfsmittel: [keine]
+   - Accueil + rituels (flipchart, warm-up, Noticing)
+   - U6 L1A : mail Fanny/Marco · négations · amorce questions
 
 ** TODO Séance 2 (Mer) — Mittwoch 22.04.2026 :Lernende:
    SCHEDULED: <2026-04-22 Wed 08:15-10:50>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     Unité 6 — Problèmes
+   :Lektionen:   pp. 89–91 (L1B + L2)
+   :Schwerpunkt: Questions QUI/QU'EST-CE QUI/QUE · passé composé verbes pronominaux
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
-   - TODO Lernatelier — [CAD + gezieltes Coaching] :Lernatelier:
+   - L1 (8:15) : ex. b lacunes · induction QUI/QU' · schéma 4 formes · drill chapeau de paille
+   - L2 (9:05) : Act. 1a+b p.90 · écoute piste 142–143 · découverte inductive PC pronominal
+   - TODO Lernatelier — CAD U6 L2 (PC pronominal) · Lernplan :Lernatelier:
 
 ** TODO Séance 3 (Lun) — Montag 27.04.2026 :Lernende:
    SCHEDULED: <2026-04-27 Mon 13:25-16:00>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     Unité 6 — Problèmes
+   :Lektionen:   pp. 90–91 (fin L2) · amorce pp. 96–97 (L5)
+   :Schwerpunkt: Retour QUI/QUE · B Rendez-vous · Jouez à deux
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
+   - L1 (13:25) : ⚠️ HKB3 — administré par Pierre, ne prépare pas
+   - L2 (14:15) : décompression post-test · retour QUI/QUE (flipchart + CAD ex.3) · écoute piste 144 · Act. b
+   - L3 (15:15) : Jouez à deux scénario A · clôture flipchart L1+L2
+
+*** Prüfung :Pruefung:Lernende:
+    SCHEDULED: <2026-04-27 Mon 13:25-14:10>
+    - Thema: HK3 — interdisziplinäre Hauptklausur (alle Fächer)
+    - Dauer: 45 min (1 Lektion Französisch geopfert)
+    - Hilfsmittel: gemäss Anweisung Direktor
+    - Gewichtung: 20%
 
 * MAI 2026
 
 ** TODO Séance 4 (Lun) — Montag 04.05.2026 :Lernende:
    SCHEDULED: <2026-05-04 Mon 13:25-16:00>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     Unité 6 — Problèmes
+   :Lektionen:   pp. 96–97 (L5)
+   :Schwerpunkt: trop/assez + adjectif · trop de/assez de + nom · devoir au conditionnel
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
+   - TODO Abschnitt 1 — [à planifier]
+   - TODO Abschnitt 2 — [à planifier]
 
 ** TODO Séance 5 (Mer) — Mittwoch 06.05.2026 :Lernende:
    SCHEDULED: <2026-05-06 Wed 08:15-10:50>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     Unité 6 — Problèmes
+   :Lektionen:   pp. 96–97 / pp. 98–102
+   :Schwerpunkt: Atelier grammaire : révision négations · QUI/QUE · PC pronominal
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
-   - TODO Lernatelier — [CAD + gezieltes Coaching] :Lernatelier:
+   - TODO Atelier de grammaire — [à planifier]
+   - TODO Lernatelier — CAD U6 L2 · B2 emails Luc/Julie (migré depuis S3) :Lernatelier:
 
-** TODO Séance 6 (Lun) — Montag 11.05.2026 :Lernende:
+** CANCELLED Séance 6 (Lun) — Montag 11.05.2026 :ZurichWoche:Lernende:
    SCHEDULED: <2026-05-11 Mon 13:25-16:00>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     —
+   :Lektionen:   —
+   :Schwerpunkt: ⚠️ Klasse in Zürich — kein Französischunterricht
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
 
-** TODO Séance 7 (Lun) — Montag 18.05.2026 :Lernende:
+** CANCELLED Séance 7 (Lun) — Montag 18.05.2026 :ZurichWoche:Lernende:
    SCHEDULED: <2026-05-18 Mon 13:25-16:00>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     —
+   :Lektionen:   —
+   :Schwerpunkt: ⚠️ Klasse in Zürich — kein Französischunterricht
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
 
 ** TODO Séance 8 (Mer) — Mittwoch 20.05.2026 :Lernende:
    SCHEDULED: <2026-05-20 Wed 08:15-10:50>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     Unité 6 — Problèmes
+   :Lektionen:   pp. 96–97 / pp. 98–102
+   :Schwerpunkt: Remise en route · atelier grammaire U6 complet · préparation test
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
-   - TODO Lernatelier — [CAD + gezieltes Coaching] :Lernatelier:
+   - Remise en route post-Zürich : réactivation warm-up U6
+   - Atelier grammaire : trop/assez · devoir au conditionnel · révision négations + QUI/QUE + PC pronominal
+   - TODO Lernatelier — préparation test U6 · Lernplan :Lernatelier:
 
-* JUNI 2026
+* JUIN 2026
 
 ** TODO Séance 9 (Lun) — Montag 01.06.2026 :Lernende:
    SCHEDULED: <2026-06-01 Mon 13:25-16:00>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     Unité 7 — Tranches de vie
+   :Lektionen:   pp. 104–106 (L1 + L2)
+   :Schwerpunkt: Imparfait (formation) · récit au passé
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
+   - L1 (13:25) : ⚠️ HKB4 — administré par Pierre, ne prépare pas
+   - L2 + L3 : U7 L1 imparfait · L2 faits divers
+
+*** Prüfung :Pruefung:Lernende:
+    SCHEDULED: <2026-06-01 Mon 13:25-14:10>
+    - Thema: HK4 — interdisziplinäre Hauptklausur (alle Fächer)
+    - Dauer: 45 min (1 Lektion Französisch geopfert)
+    - Hilfsmittel: gemäss Anweisung Direktor
+    - Gewichtung: 40%
 
 ** TODO Séance 10 (Mer) — Mittwoch 03.06.2026 :Lernende:
    SCHEDULED: <2026-06-03 Wed 08:15-10:50>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     Unité 6–7
+   :Lektionen:   pp. 108–109 (L3) · test U6
+   :Schwerpunkt: Test U6 · début atelier grammaire U7
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
-   - TODO Lernatelier — [CAD + gezieltes Coaching] :Lernatelier:
+   - Atelier grammaire : emploi du PC et de l'imparfait
+   - TODO Lernatelier — [à planifier] :Lernatelier:
+
+*** Prüfung :Pruefung:Lernende:
+    SCHEDULED: <2026-06-03 Wed 08:15-08:45>
+    - Thema: Test grammaire U6 — QUI/QUE · négations · PC pronominal · trop/assez · vocabulaire L1+L2 uniquement (L3–L5 non testées)
+    - Dauer: 30 min
+    - Hilfsmittel: keine
 
 ** TODO Séance 11 (Lun) — Montag 08.06.2026 :Lernende:
    SCHEDULED: <2026-06-08 Mon 13:25-16:00>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     Unité 7 — Tranches de vie
+   :Lektionen:   pp. 108–109 (L3 suite)
+   :Schwerpunkt: Indicateurs de temps · relatifs · Standortbestimmung BFD 2024
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
+   - TODO Abschnitt 1 — [à planifier]
+   - Standortbestimmung anhand der BFD-Prüfung 2024
 
 ** TODO Séance 12 (Lun) — Montag 15.06.2026 :Lernende:
    SCHEDULED: <2026-06-15 Mon 13:25-16:00>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     Unité 7 — Tranches de vie
+   :Lektionen:   pp. 110–113 (L4 + L5)
+   :Schwerpunkt: Gérer le stress (pronom en) · faire des projets (futur simple)
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
+   - TODO Abschnitt 1 — [à planifier]
+   - TODO Abschnitt 2 — [à planifier]
 
 ** TODO Séance 13 (Mer) — Mittwoch 17.06.2026 :Lernende:
    SCHEDULED: <2026-06-17 Wed 08:15-10:50>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     Unité 7 — Tranches de vie
+   :Lektionen:   pp. 110–113
+   :Schwerpunkt: Atelier grammaire : PC + imparfait · Test 30 min vocab U1–6 + CO
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
-   - TODO Lernatelier — [CAD + gezieltes Coaching] :Lernatelier:
+   - Atelier grammaire : PC et imparfait
+   - TODO Lernatelier — Individuelle Anpassung Lernplan :Lernatelier:
+
+*** Prüfung :Pruefung:Lernende:
+    SCHEDULED: <2026-06-17 Wed 09:05-09:35>
+    - Thema: Test vocabulaire U1–6 · conjugaison imparfait · Compréhension orale
+    - Dauer: 30 min
+    - Hilfsmittel: keine
 
 ** TODO Séance 14 (Lun) — Montag 22.06.2026 :Lernende:
    SCHEDULED: <2026-06-22 Mon 13:25-16:00>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     BFD — Bürofachdiplom VSH
+   :Lektionen:   —
+   :Schwerpunkt: Leseverstehen · Hörverstehen · Textproduktion
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
+
+*** Prüfung :Pruefung:Lernende:
+    SCHEDULED: <2026-06-22 Mon 13:25-16:00>
+    - Thema: BFD — Bürofachdiplom VSH (Niveau A1+)
+    - Dauer: 3 × 20 min (Leseverstehen · Hörverstehen · Textproduktion email 60–80 mots)
+    - Hilfsmittel: keine
+    - Gewichtung: note finale
 
 ** TODO Séance 15 (Lun) — Montag 29.06.2026 :Lernende:
    SCHEDULED: <2026-06-29 Mon 13:25-16:00>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [?]
+   :Einheit:     Grammaire U1–7
+   :Lektionen:   révision générale
+   :Schwerpunkt: Pronoms de quantité · futur simple · test évaluation grammaire + plan individuel
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
+   - TODO Abschnitt 1 — [à planifier]
+   - Test d'évaluation des connaissances de grammaire + plan individuel d'apprentissage
 
 * JULI 2026
 
 ** TODO Séance 16 (Mer) — Mittwoch 01.07.2026 :Lernende:
    SCHEDULED: <2026-07-01 Wed 08:15-10:50>
    :PROPERTIES:
-   :Einheit:     [?]
-   :Lektionen:   [?]
-   :Schwerpunkt: [Semesterbilanz · freie Produktion]
+   :Einheit:     Feedbackwoche
+   :Lektionen:   —
+   :Schwerpunkt: Semesterbilanz · Rückblick + Ausblick · freie Produktion
    :END:
-   - TODO Abschnitt 1 — [...]
-   - TODO Abschnitt 2 — [...]
-   - TODO Lernatelier — [Semesterbilanz · freie Produktion] :Lernatelier:
+   - Bilan du semestre · retour sur les objectifs individuels du Lernplan
+   - TODO Lernatelier — Semesterbilanz · freie Produktion :Lernatelier:
 
 #+BEGIN_EXPORT latex
 \vspace{1cm}
