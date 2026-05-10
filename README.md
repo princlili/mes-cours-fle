@@ -75,4 +75,10 @@ This repo is shared freely. If you have questions or want to contribute, open an
 
 ---
 
+## License
+
+Content and templates licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — you are free to use, adapt and share with attribution.
+
+---
+
 *Princlili · FLE A1–B1 · Lucerne, Switzerland*
