@@ -1,0 +1,200 @@
+/* ============================================================
+   remarkable-style.css — Canevas FLE · Pierre Vaucher
+   Optimisé impression Chrome → PDF → Remarkable 2
+   Noir/blanc strict · Arial · Mise à jour : avril 2026
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.3;
+    margin: 25px;
+    max-width: 100%;
+    background: white;
+    color: #000;
+}
+
+/* ── EN-TÊTE ─────────────────────────────────────────────── */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #000;
+}
+.header h1 { font-size: 13pt; font-weight: bold; margin: 0; }
+.header-info { display: flex; gap: 10px; align-items: center; }
+.duration { font-size: 12pt; font-weight: bold; }
+.badge {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 3px 8px;
+    font-size: 9pt;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* ── OBJECTIFS ───────────────────────────────────────────── */
+.objectifs {
+    margin: 10px 0;
+    padding: 8px;
+    border: 2px solid #000;
+    background: #fff;
+}
+.objectifs strong { font-size: 11pt; }
+.objectifs-list { margin-top: 5px; font-size: 10pt; }
+.objectifs-list div { margin: 3px 0; }
+
+/* ── PHASE ───────────────────────────────────────────────── */
+.phase {
+    margin: 12px 0;
+    border: 3px solid #000;
+    background: #fff;
+    page-break-inside: avoid;
+}
+.phase-header {
+    display: flex;
+    align-items: center;
+    background: #555;
+    padding: 5px 8px;
+    border-bottom: 2px solid #000;
+}
+.phase-num {
+    background: #000;
+    color: white;
+    border-radius: 50%;
+    width: 26px; height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13pt;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+.phase-title {
+    flex-grow: 1;
+    font-size: 11pt;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* ── TIMING BOXES ────────────────────────────────────────── */
+.timing-boxes { display: flex; gap: 3px; }
+.timing-box {
+    background: white;
+    border: 2px solid #000;
+    padding: 2px 6px;
+    font-size: 9pt;
+    font-weight: bold;
+    text-align: center;
+    min-width: 35px;
+    white-space: nowrap;
+}
+
+/* ── CONTENU DE PHASE ────────────────────────────────────── */
+.phase-content { padding: 8px 10px; }
+
+/* ── SOUS-SECTIONS ───────────────────────────────────────── */
+.subsection {
+    margin: 8px 0;
+    padding: 6px 8px;
+    background: #ddd;
+    border-left: 4px solid #000;
+}
+.subsection-title { font-size: 11pt; font-weight: bold; margin-bottom: 4px; }
+
+/* Réserve / optionnel : fond blanc, bordure pointillée */
+.subsection-reserve {
+    margin: 8px 0;
+    padding: 6px 8px;
+    background: #fafafa;
+    border-left: 3px dashed #555;
+}
+.subsection-reserve .subsection-title {
+    font-size: 10pt; font-weight: bold; color: #333; margin-bottom: 4px;
+}
+
+/* ── LISTES ──────────────────────────────────────────────── */
+.phase-content > ul,
+.subsection > ul,
+.subsection-reserve > ul {
+    margin-left: 15px; margin-top: 3px;
+}
+.phase-content li,
+.subsection li,
+.subsection-reserve li {
+    margin: 3px 0; font-size: 10pt;
+}
+
+/* ── TYPES DE CONTENU ────────────────────────────────────── */
+
+/* Consigne prof — ce que je dis textuellement */
+.instruction {
+    border: 2px solid #000;
+    padding: 5px 8px;
+    margin: 5px 0;
+    font-weight: bold;
+    font-size: 10pt;
+    line-height: 1.4;
+    background: #f5f5f5;
+}
+
+/* Question posée aux TN */
+.question { font-weight: bold; margin: 3px 0; font-size: 10pt; }
+
+/* Note pédagogique */
+.note { font-size: 9pt; font-style: italic; color: #333; margin: 3px 0; }
+
+/* ── ÉLÉMENTS STRUCTURELS ────────────────────────────────── */
+
+/* Buffer de sécurité */
+.buffer {
+    background: #fafafa;
+    border: 2px dashed #555;
+    padding: 5px 10px;
+    margin: 8px 0;
+    text-align: center;
+    font-size: 9pt;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Pause */
+.pause {
+    background: #ddd;
+    padding: 12px;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12pt;
+    border: 4px solid #000;
+}
+
+/* Séparateur */
+hr { margin: 15px 0; border: none; border-top: 2px solid #000; }
+
+/* Footer timing */
+.footer-timing {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    padding-top: 8px;
+    border-top: 2px solid #000;
+    font-size: 10pt;
+}
+
+/* Bloc matériel */
+.materiel-box {
+    margin-top: 12px;
+    padding: 8px 10px;
+    background: #f0f0f0;
+    border: 2px solid #000;
+    font-size: 9.5pt;
+    line-height: 1.5;
+}
+.materiel-box strong { font-size: 10pt; }
