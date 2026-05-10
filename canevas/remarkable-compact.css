@@ -1,0 +1,85 @@
+/* ============================================================
+   remarkable-compact.css — Version consultation en classe
+   Pierre Vaucher · FLE Minerva H2
+   Masque tout ce qui n'est pas nécessaire pendant le cours.
+   Usage : remplacer remarkable-style.css dans le <head>
+   ============================================================ */
+
+/* ── Importer la base ─────────────────────────────────────── */
+@import url('remarkable-style.css');
+
+/* ── CE QUI DISPARAÎT EN VERSION COMPACT ─────────────────── */
+
+/* Notes pédagogiques — lues en préparation, pas en classe */
+.note { display: none; }
+
+/* Titres de sous-sections — implicites dans le flux */
+.subsection-title { display: none; }
+
+/* Listes d'actions — internalisées en préparation */
+.phase-content > ul,
+.subsection > ul,
+.subsection-reserve > ul { display: none; }
+
+/* Bloc matériel — déjà préparé avant le cours */
+.materiel-box { display: none; }
+
+/* Footer timing — internalisé */
+.footer-timing { display: none; }
+
+/* Buffer — visible mais minimal */
+.buffer {
+    padding: 2px 8px;
+    font-size: 8pt;
+    margin: 4px 0;
+}
+
+/* ── CE QUI RESTE VISIBLE ─────────────────────────────────── */
+/* Header · Objectifs · Phase headers + timing-boxes
+   Instructions (ce que je dis) · Questions · Pause · hr     */
+
+/* ── AJUSTEMENTS COMPACITÉ ───────────────────────────────── */
+
+body {
+    font-size: 10pt;
+    margin: 18px;
+    line-height: 1.45;
+}
+
+.phase {
+    margin: 8px 0;
+}
+
+.phase-content {
+    padding: 6px 10px;
+}
+
+.subsection {
+    margin: 5px 0;
+    padding: 5px 8px;
+}
+
+/* Instructions plus compactes mais toujours lisibles */
+.instruction {
+    padding: 5px 8px;
+    margin: 4px 0;
+    font-size: 10pt;
+    line-height: 1.4;
+}
+
+/* Questions bien visibles */
+.question {
+    font-size: 10pt;
+    margin: 3px 0;
+}
+
+.objectifs-list div {
+    margin: 3px 0;
+}
+
+/* Pause : reste bien visible — repère temporel fort */
+.pause {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 11pt;
+}
